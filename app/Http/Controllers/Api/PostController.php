@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\User;
 
 class PostController extends Controller
 {
@@ -12,12 +13,20 @@ class PostController extends Controller
 	public function index(){
 		
 		$post = Post::orderBy('post.updated_at', 'ASC')
-					->join('post_file', 'post.id', 'post_file.post_id')
-					->join('users', 'post.user_id', 'users.id')
-					->join('clone', 'users.id', 'clone.user_id')
 					->first();
 		
+		
 		$post->touch();
+		
+		
+		$clones = User::select('clone.*')
+			->where('users.id', $post->user_id)
+			->join('clone', 'users.id', 'clone.user_id')
+			->get();
+		
+		$post->files = $post->files()->get();
+		
+		$post->clones = $clones;
 		
 		return $post;
 		

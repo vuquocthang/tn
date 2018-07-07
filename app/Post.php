@@ -16,6 +16,12 @@ class Post extends Model
 		'status'
 	];
 	
+	protected $attributes = [
+		'files',
+		'clone'
+	];
+	
+	
 	public function files(){
 		return $this->hasMany('App\PostFile');
 	}
