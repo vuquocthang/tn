@@ -11,7 +11,7 @@ class PostController extends Controller
     //
 	public function index(){
 		
-		$post = Post::orderBy('updated_at', 'ASC')
+		$post = Post::orderBy('post.updated_at', 'ASC')
 					->join('post_file', 'post.id', 'post_file.post_id')
 					->join('users', 'post.user_id', 'users.id')
 					->join('clone', 'users.id', 'clone.user_id')
