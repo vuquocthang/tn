@@ -35,4 +35,7 @@ Route::namespace('Api')->group(function (){
      * keywords
      */
     Route::post('keywords', 'HomeController@keywords');
+	
+	//post
+	Route::get('post', 'PostController@index');
 });
