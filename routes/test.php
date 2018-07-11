@@ -211,7 +211,11 @@ Route::prefix('test')->group(function (){
 
         //add friend by selenium
         Route::get('/add-friend', function (){
-
+			$clone = Clon3::find(357);
+			
+			$clone->uids = $clone->uids();
+			
+			return  $clone->unsentFriendRequestUids();
         });
     });
 

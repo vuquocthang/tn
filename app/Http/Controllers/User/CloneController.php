@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Clon3;
+use App\Proxy;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
@@ -85,7 +86,17 @@ class CloneController extends Controller
 
         $input['user_id'] = Auth::id();
 
-        Clon3::create($input);
+        $clone = Clon3::create($input);
+		
+		$proxy = Proxy::orderBy('updated_at', 'ASC')->first();
+        $proxy->touch();
+
+		$clone->fill([
+			'ip' => $proxy->ip,
+			'port' => $proxy->port
+		]);
+		
+		$clone->update();
 
         return redirect()->route('clone.index')->with('message', 'Thêm clone thành công !');
     }
@@ -116,9 +127,15 @@ class CloneController extends Controller
 
     //delete
     public function delete($id){
-        Clon3::where('user_id', Auth::id())
+			
+        $clone = Clon3::where('user_id', Auth::id())
             ->where('id', $id)
-            ->delete();
+            ->first();
+			
+		if($clone){
+			
+			Clon3::find($clone->id)->myDelete();
+		}	
 
         return redirect()->route('clone.index')->with('message', 'Xóa clone thành công !');
     }

@@ -3,6 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use App\FriendRequest;
+use App\Uid;
 
 class Clon3 extends Model
 {
@@ -12,6 +15,7 @@ class Clon3 extends Model
     protected $fillable = [
         'uid',
         'user_id',
+		'note',
         'c_user',
         'xs',
         'token',
@@ -19,6 +23,7 @@ class Clon3 extends Model
         'ip',
         'port'
     ];
+	
 
     /**
      * @return mixed
@@ -34,4 +39,52 @@ class Clon3 extends Model
     {
         return $this->hasMany('App\Reaction');
     }
+	
+	
+	public function uids(){
+		return $this
+			->hasMany('App\Uid', 'clone_id', 'id')
+			->get();
+	}
+	
+	public function sentFriendRequestUids(){
+		return $this
+			->hasMany('App\FriendRequest', 'clone_id', 'id')
+			->get();
+	}
+	
+	public function unsentFriendRequestUids(){
+		
+		return $this
+			->hasMany('App\Uid', 'clone_id', 'id')
+			->whereNotIn('uid', FriendRequest::select('uid')->where('clone_id', $this->id)->get() )
+			->get();
+	}
+	
+	public function readyFriendRequestUids($uids, $quantity){
+        shuffle($uids);
+        return array_slice($uids, 0, $quantity);
+    }
+	
+	public function myDelete(){
+		//delete uid 
+		Uid::where('clone_id', $this->id)
+			->delete();
+		
+		//delete sent request
+		FriendRequest::where('clone_id', $this->id)
+			->delete();
+		
+		//delete clone
+		DB::table('clone')
+			->where('id', $this->id)
+			->delete();
+	}
+	
+	//post
+	public function posts(){
+		return $this
+			->hasMany('App\Post', 'clone_id', 'id')
+			->get();
+	}
 }

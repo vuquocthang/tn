@@ -63,6 +63,19 @@
                                             </div>--}}
                                         </div>
                                     </div>
+									
+									
+									<div class="form-group">
+										<label class="col-md-3 control-label">Clone</label>
+										<div class="col-md-6">
+											<select name='clone_id' class="form-control">
+												@foreach($clones as $clone)
+												<option value="{{ $clone->id }}" >{{ $clone->uid }} <span style="color: red">({{ $clone->note }})</span></option>
+												@endforeach
+											</select>
+										</div>
+									</div>
+									
                                     <!-- Form actions -->
                                     <div class="form-group">
                                         <div class="col-md-9 text-right">

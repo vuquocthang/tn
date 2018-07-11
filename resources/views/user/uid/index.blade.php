@@ -36,8 +36,22 @@
                             </div>
                         </div>
                         <div class="portlet-body">
+							<div class="form-group">
+								<label class="col-md-3 control-label">Clone</label>
+								<div class="col-md-6">
+									<select onchange="window.location.href= '{{ url()->current() }}?clone_id=' + this.value " name='clone_id' class="form-control">
+										<option style="color: red"  value="all" >All</option>
+										
+										@foreach($clones as $clone)
+										<option style="color: red" value="{{ $clone->id }}" {{ $clone_id == $clone->id ? 'selected' : '' }} >{{ $clone->uid }} <span style="color: red">({{ $clone->note }})</span></option>
+										@endforeach
+									</select>
+								</div>
+							</div>
+							<br>		
+									
                             <div class="table-scrollable">
-                                <table class="table table-hover">
+								<table class="table table-hover">
                                     <thead>
                                     <tr>
                                         <td>#</td>
@@ -57,7 +71,7 @@
                                     </tbody>
                                 </table>
 
-                                {{ $uids->links() }}
+                                {{ $uids->appends(request()->query())->links() }}
                             </div>
                         </div>
                     </div>

@@ -69,6 +69,9 @@ Route::middleware('auth')->namespace('User')->group(function (){
 		//upload
 		Route::any('/upload', 'PostController@upload')->name('upload');
 		
+		//delete
+		Route::name('del')->get('/delete/{id}', 'PostController@delete');
+		
 	});
 	
 

@@ -11,7 +11,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <!--section starts-->
-            <h1>Clone Table</h1>
+            <h1>Danh Sách Bài Đăng</h1>
             <ol class="breadcrumb">
                 <li>
                     <a href="{{ url('') }}">
@@ -19,9 +19,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('clone.index') }}">Clone</a>
+                    <a href="{{ route('post.index') }}">Bài Đăng</a>
                 </li>
-                <li class="active">Table</li>
+                <li class="active">Danh Sách</li>
             </ol>
         </section>
         <!--section ends-->
@@ -49,9 +49,9 @@
                                     <tr>
                                         <td>#</td>
                                         <td>Giờ</td>
-                                        <td>Nội dung</td>
-
-                                        
+										<td>Clone</td>
+										<td>Trạng Thái</td>
+										<td>Hành Động</td>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -60,11 +60,17 @@
                                     <tr>
                                         <td>{{ $index + 1 }}</td>
 										<td>{{ $post->time }}</td>
-                                        <td>{!! $post->text !!}</td>
+                                        <td>
+											<a target="_blank" href="https://fb.com/{{ $post->clon3->uid }}">{{ $post->clon3->uid }}</a>
+										</td>
+										
+										<td>{!! $post->status() !!}</td>
+										
+										<td>
+											<a href="{{ route('post.del', $post->id) }}">Xóa</a>
+										</td>
                                     </tr>
-
-                                    
-                                    @endforeach
+									@endforeach
 
                                     </tbody>
                                 </table>

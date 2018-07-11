@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
+use App\Clon3;
 
 class PostController extends Controller
 {
@@ -28,7 +29,13 @@ class PostController extends Controller
 	
 	//add
 	public function addForm(){
-		return view('user.post.add');
+		$userId = Auth::id();
+		
+		$clones = Clon3::where('user_id', $userId)->get();
+		
+		return view('user.post.add', [
+			'clones' => $clones
+		]);
 	}
 	
 	public function add(Request $request){
@@ -47,6 +54,22 @@ class PostController extends Controller
 			]);
 		
 		return redirect()->route('post.index');
+	}
+	
+	
+	public function delete($id){
+		$userId = Auth::id();
+		
+		$post = Post::where('user_id', $userId)
+			->where('id', $id)
+			->first();
+			
+		$post->files()->delete();
+		$post->schedules()->delete();
+		
+		$post->delete();
+		
+		return redirect()->back();
 	}
 	
 	//upload file

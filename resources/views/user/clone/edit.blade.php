@@ -65,6 +65,13 @@
                                             <input id="xs" name="xs" type="text" placeholder="Xs" value="{{ $clone->xs }}" class="form-control" required>
                                         </div>
                                     </div>
+									
+									<div class="form-group hide-when-birthday">
+                                        <label class="col-md-3 control-label" for="xs">Ghi Chú</label>
+                                        <div class="col-md-6">
+                                            <input id="xs" name="note" type="text" placeholder="Ghi chú" value="{{ $clone->note }}" class="form-control" >
+                                        </div>
+                                    </div>
 
                                     <!-- Form actions -->
                                     <div class="form-group">

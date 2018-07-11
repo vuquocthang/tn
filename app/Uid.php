@@ -12,6 +12,7 @@ class Uid extends Model
 
     protected $fillable = [
         'uid',
+		'clone_id',
         'user_id',
         'status'
     ];

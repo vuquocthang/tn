@@ -38,4 +38,7 @@ Route::namespace('Api')->group(function (){
 	
 	//post
 	Route::get('post', 'PostController@index');
+	
+	//posted
+	Route::any('posted', 'PostController@posted');
 });

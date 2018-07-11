@@ -60,6 +60,17 @@
 
                                 <fieldset>
 									<div class="form-group">
+										<label class="col-md-2 control-label">Clone</label>
+										<div class="col-md-9">
+											<select name='clone_id' class="form-control">
+												@foreach($clones as $clone)
+												<option value="{{ $clone->id }}" >{{ $clone->uid }} <span style="color: red">({{ $clone->note }})</span></option>
+												@endforeach
+											</select>
+										</div>
+									</div>
+									
+									<div class="form-group">
                                         <label class="col-md-2 control-label" for="name">Hẹn giờ</label>
                                         <div class="col-md-9">
                                             <input id="name" name="time" type="text" placeholder="Hẹn giờ. Ví dụ : 22" class="form-control" required>
