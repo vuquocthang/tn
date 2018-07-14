@@ -15,8 +15,9 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         //
         '\App\Console\Commands\AddFriend',
-        '\App\Console\Commands\AddFriend2',
-        '\App\Console\Commands\AddFriend3',
+        //'\App\Console\Commands\AddFriend2',
+        //'\App\Console\Commands\AddFriend3',
+	'\App\Console\Commands\Test'
     ];
 
     /**
@@ -30,8 +31,9 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
         $schedule->command('AddFriend:perform')->dailyAt('6:00');
-        $schedule->command('AddFriend2:perform')->dailyAt('12:00');
-        $schedule->command('AddFriend3:perform')->dailyAt('18:00');
+        //$schedule->command('AddFriend2:perform')->dailyAt('12:00');
+        //$schedule->command('AddFriend3:perform')->dailyAt('18:00');
+	$schedule->command('Test:perform')->everyMinute();
     }
 
     /**
