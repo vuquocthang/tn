@@ -50,7 +50,7 @@ class UidController extends Controller
 		$uids = FriendRequest::where('clone_id', $cloneId)->paginate(20);
 		
 		if( $cloneId == 'all' || empty($cloneId) ){
-			$uids = FriendRequest::paginate(20);
+			$uids = FriendRequest::where('user_id', $userId)->paginate(20);
 		}
 		
         return view('user.uid.sent', [
