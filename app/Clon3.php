@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use App\FriendRequest;
 use App\Uid;
+use App\Post;
+use App\PostSchedule;
 
 class Clon3 extends Model
 {
@@ -67,14 +69,19 @@ class Clon3 extends Model
     }
 	
 	public function myDelete(){
-		//delete uid 
+		//delete uids
 		Uid::where('clone_id', $this->id)
 			->delete();
 		
-		//delete sent request
+		//delete sent requests
 		FriendRequest::where('clone_id', $this->id)
 			->delete();
 		
+		//delete posts
+		foreach($this->posts() as $post){
+			$post->myDelete();
+		}
+			
 		//delete clone
 		DB::table('clone')
 			->where('id', $this->id)

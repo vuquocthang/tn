@@ -44,4 +44,15 @@ class Post extends Model
 	public function status(){
 		return $this->readyPost() ? '<span style="color:green">Chưa Đăng</span>' :  '<span style="color:red">Đã Đăng</span>';
 	}
+	
+	public function myDelete(){
+		//delete files
+		$this->files()->delete();
+
+		//delete schedules
+		$this->schedules()->delete();
+		
+		//delete post
+		Post::destroy($this->id);
+	}
 }
