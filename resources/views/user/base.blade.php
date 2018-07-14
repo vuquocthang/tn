@@ -276,20 +276,18 @@
                                 </a>
                             </li>
 
-							{{--
-                            <li class="{{ \Request::route()->getName() == 'uid.add' ? 'active' : '' }}">
-                                <a href="{{ route('uid.add') }}">
-                                    <i class="fa fa-angle-double-right"></i> Add
-                                </a>
-                            </li> --}}
-
                             <li class="{{ \Request::route()->getName() == 'uid.index' ? 'active' : '' }}">
                                 <a href="{{ route('uid.index') }}">
                                     <i class="fa fa-angle-double-right"></i> Danh Sách Tài Khoản Đang Kết Bạn
                                 </a>
                             </li>
-
-                        </ul>
+							
+							<li class="{{ \Request::route()->getName() == 'uid.sent' ? 'active' : '' }}">
+                                <a href="{{ route('uid.sent') }}">
+                                    <i class="fa fa-angle-double-right"></i> Danh Sách Tài Khoản Đã Kết Bạn
+                                </a>
+                            </li>
+						</ul>
                     </li>
 
                     <li class="{{ \Request::route()->getName() == 'clone.index' || \Request::route()->getName()  == 'clone.upload' || \Request::route()->getName()  == 'clone.add' ? 'active' : '' }}">
@@ -315,8 +313,7 @@
                                     <i class="fa fa-angle-double-right"></i> Index
                                 </a>
                             </li>
-
-                        </ul>
+						</ul>
                     </li>
 					
 					

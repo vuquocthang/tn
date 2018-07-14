@@ -54,6 +54,9 @@ Route::middleware('auth')->namespace('User')->group(function (){
 
         //index
         Route::get('/', 'UidController@index')->name('index');
+		
+		//sent
+        Route::get('/sent', 'UidController@sent')->name('sent');
     });
 	
 	//post

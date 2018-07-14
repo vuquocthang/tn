@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Uid;
 use App\Clon3;
+use App\FriendRequest;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
@@ -17,8 +18,6 @@ class UidController extends Controller
     {
         $userId = Auth::id();
 
-        
-
 		$clones = Clon3::where('user_id', $userId)
 					->get();	
 		
@@ -29,19 +28,37 @@ class UidController extends Controller
 		if( $clone_id == 'all' || empty($clone_id) ){
 			$uids = $uids->paginate(20);
 		}else{
-			$uids = $uids->
-				where('clone_id', $clone_id)->
-				paginate(20);
+			$uids = $uids->where('clone_id', $clone_id)
+						->paginate(20);
 		}
 		
-            
-			
         return view('user.uid.index', [
             'uids' => $uids,
 			'clones' => $clones,
 			'clone_id' => $clone_id
         ]);
     }
+	
+	public function sent(Request $request){
+		$userId = Auth::id();
+
+		$clones = Clon3::where('user_id', $userId)
+					->get();	
+		
+		$cloneId = $request->query('clone_id');
+		
+		$uids = FriendRequest::where('clone_id', $cloneId)->paginate(20);
+		
+		if( $cloneId == 'all' || empty($cloneId) ){
+			$uids = FriendRequest::paginate(20);
+		}
+		
+        return view('user.uid.sent', [
+            'uids' => $uids,
+			'clones' => $clones,
+			'cloneId' => $cloneId
+        ]);
+	}
 
     public function uploadForm(){
 		
