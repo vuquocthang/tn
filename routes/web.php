@@ -77,6 +77,42 @@ Route::middleware('auth')->namespace('User')->group(function (){
 		
 	});
 	
+	//thu-vien
+	Route::prefix('thu-vien')->name('thu-vien.')->middleware('user')->group(function(){
+		//danh-sach
+		Route::get('/danh-sach', 'ThuVienController@danhSach')->name('danh-sach');
+		
+		//bai-viet/tao
+		Route::post('/bai-viet/tao', 'ThuVienController@taoBaiViet')->name('tao-bai-viet');
+		
+		//bai-viet/xoa/{id}
+		Route::get('/bai-viet/xoa/{id}', 'ThuVienController@xoaBaiViet')->name('xoa-bai-viet');
+		
+		//chuyen-muc
+		Route::get('/chuyen-muc', 'ThuVienController@chuyenMuc')->name('chuyen-muc');
+		
+		//chuyen-muc
+		Route::post('/chuyen-muc/them', 'ThuVienController@themChuyenMuc')->name('them-chuyen-muc');
+		
+		//chuyen-muc/sua/{id}
+		Route::post('/chuyen-muc/sua/{id}', 'ThuVienController@suaChuyenMuc')->name('sua-chuyen-muc');
+		
+		//chuyen-muc/xoa/{id}
+		Route::get('/chuyen-muc/xoa/{id}', 'ThuVienController@xoaChuyenMuc')->name('xoa-chuyen-muc');
+		
+		//lich-dang/tao
+		Route::post('/lich-dang/tao', 'ThuVienController@taoLichDang')->name('tao-lich-dang');
+		
+		//lich-dang
+		Route::get('/lich-dang', 'ThuVienController@lichDang')->name('lich-dang');
+		
+		//xoa-lich-dang/{id}
+		Route::get('/xoa-lich-dang/{id}', 'ThuVienController@xoaLichDang')->name('xoa-lich-dang');
+		
+		
+	});
+	
+	
 
 });
 

@@ -10,12 +10,14 @@ class Post extends Model
 	protected $table='post';
 	
 	protected $fillable = [
-		'user_id',
-		'clone_id',
-		'time',
+		'post_cat_id',
 		'text',
 		'status'
 	];
+	
+	public function postCat(){
+		return $this->belongsTo('App\PostCat');
+	}
 	
 	public function files(){
 		return $this->hasMany('App\PostFile');
