@@ -131,12 +131,7 @@ class CloneController extends Controller
 			
         $clone = Clon3::where('user_id', Auth::id())
             ->where('id', $id)
-            ->first();
-			
-		if($clone){
-			
-			Clon3::find($clone->id)->myDelete();
-		}	
+            ->delete();	
 
         return redirect()->route('clone.index')->with('message', 'Xóa clone thành công !');
     }
