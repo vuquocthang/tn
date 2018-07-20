@@ -110,15 +110,8 @@ class AddFriend extends Command
                 ],
                 //'debug' => true
             ]);
-
-            //save friend request
-            foreach ($uids as $uid){
-                FriendRequest::create([
-                    'user_id' => $clone->user_id,
-                    'clone_id' => $clone->id,
-                    'uid' => $uid['uid']
-                ]);
-            }
+			
+			echo "Done";
 		}
     }
 }

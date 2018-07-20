@@ -20,8 +20,13 @@ class PostCatSchedule extends Model
 	}
 	
 	public function clones(){
-		return PostCatSchedule::select('clone.*')
-					->join('post_cat_schedule_clone', 'id', 'post_cat_schedule_id')
-					->join('clone', 'clone_id', 'id');
+		return $this->hasManyThrough(
+			'App\Clon3',
+			'App\PostCatScheduleClone',
+			'post_cat_schedule_id',
+			'clone_id',
+			'id',
+			'id'
+		);
 	}
 }
