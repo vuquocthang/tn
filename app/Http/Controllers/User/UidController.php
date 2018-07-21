@@ -11,6 +11,7 @@ use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Log;
 
 class UidController extends Controller
 {
@@ -94,10 +95,11 @@ class UidController extends Controller
 						]);
 					}
 				}catch (\Exception $e){
-					//return redirect()->route('uid.index');
+					return redirect()->route('uid.index');
 				}
 			}
 		}catch (\Exception $e){
+			Log::error($e);
 			return redirect()->route('uid.index');
 		}
 

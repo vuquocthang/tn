@@ -17,7 +17,7 @@ class Kernel extends ConsoleKernel
         '\App\Console\Commands\AddFriend',
         //'\App\Console\Commands\AddFriend2',
         //'\App\Console\Commands\AddFriend3',
-	'\App\Console\Commands\Test'
+	//'\App\Console\Commands\Test'
     ];
 
     /**
