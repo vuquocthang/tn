@@ -41,17 +41,27 @@ class UidController extends Controller
     }
 	
 	public function sent(Request $request){
-		$userId = Auth::id();
+		$user = Auth::user();
+		
+		$clones = $user->clones()->get();
 
-		$clones = Clon3::where('user_id', $userId)
-					->get();	
+		//$clones = Clon3::where('user_id', $userId)
+					//->get();	
+		
+		//$cloneId = $request->query('clone_id');
+		
+		//$uids = FriendRequest::where('clone_id', $cloneId)->paginate(20);
+		
+		//if( $cloneId == 'all' || empty($cloneId) ){
+			//$uids = FriendRequest::where('user_id', $userId)->paginate(20);
+		//}
 		
 		$cloneId = $request->query('clone_id');
 		
-		$uids = FriendRequest::where('clone_id', $cloneId)->paginate(20);
+		$uids = $user->friendRequests()->paginate(20);
 		
-		if( $cloneId == 'all' || empty($cloneId) ){
-			$uids = FriendRequest::where('user_id', $userId)->paginate(20);
+		if($cloneId != 'all' && !empty($cloneId) ){
+			$uids = Clon3::find($cloneId)->friendRequests()->paginate(20);	
 		}
 		
         return view('user.uid.sent', [

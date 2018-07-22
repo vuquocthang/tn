@@ -31,7 +31,7 @@ class Clon3 extends Model
      * @return mixed
      */
     public function friendRequests(){
-        return $this->hasMany('App\FriendRequest');
+        return $this->hasMany('App\FriendRequest', 'clone_id');
     }
 
     /**

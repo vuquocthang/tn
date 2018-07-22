@@ -277,7 +277,7 @@
                     <ul id="menu" class="page-sidebar-menu">
 
                         @if($user->is_admin == 0)
-                        <li class="{{ \Request::route()->getName() == 'uid.index' || \Request::route()->getName() == 'uid.upload' || \Request::route()->getName() == 'uid.add' ? 'active' : '' }}">
+                        <li class="{{ \Request::route()->getName() == 'uid.index' || \Request::route()->getName() == 'uid.upload' || \Request::route()->getName() == 'uid.sent' ? 'active' : '' }}">
                             <a href="{{ route('uid.index') }}">
                                 <i class="fa fa-users"></i>
 								<span class="title">Kết Bạn</span>
