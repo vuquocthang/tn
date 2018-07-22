@@ -33,6 +33,15 @@ class User extends Authenticatable
     public function clones(){
         return $this->hasMany('App\Clon3');
     }
+	
+	public function friendRequests(){
+		return $this->hasManyThrough(
+			'App\FriendRequest', 
+			'App\Clon3',
+			'user_id',
+			'clone_id'
+		);
+	}
 
     public function uids(){
         return $this->hasMany('App\Uid')->get();
