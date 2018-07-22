@@ -72,6 +72,8 @@ class User extends Authenticatable
 		$this->postCats()->where('id', $id)->delete();
 	}
 	
+	
+	
 	//bai-viet
 	public function createPost($input){
 		\App\Post::create($input);
@@ -88,6 +90,16 @@ class User extends Authenticatable
 			'App\Post', 
 			'App\PostCat'
 		);
+	}
+	
+	//post cat schedule
+	public function postCatSchedulesByDateAndHour($date, $hour){
+		return $this->hasManyThrough(
+			'App\PostCatSchedule', 
+			'App\PostCat'
+		)->select('post_cat_schedule.*')
+		->where('date', $date)
+		->where('hour', $hour);
 	}
 	
 	public function postCatSchedules(){

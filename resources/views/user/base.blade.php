@@ -400,15 +400,15 @@
                         <!-- End Bai Cho Dang -->
 
                         <!-- Lich Dang Bai-->
-                        <li class="{{ \Request::route()->getName() == 'thu-vien.lich-dang' ? 'active' : '' }}">
+                        <li class="{{ \Request::route()->getName() == 'lich-dang-bai.danh-sach' ? 'active' : '' }}">
                             <a href="{{ route('clone.index') }}">
                                 <i class="fa fa-clock-o"></i>
                                 <span class="title">Lịch Đăng Bài</span>
                                 <span class="fa arrow"></span>
                             </a>
                             <ul class="sub-menu">
-                                <li class="{{ \Request::route()->getName() == 'thu-vien.lich-dang' ? 'active' : '' }}">
-                                    <a href="{{ route('thu-vien.lich-dang') }}">
+                                <li class="{{ \Request::route()->getName() == 'lich-dang-bai.danh-sach' ? 'active' : '' }}">
+                                    <a href="{{ route('lich-dang-bai.danh-sach') }}">
                                         <i class="fa fa-tasks"></i> Danh Sách
                                     </a>
                                 </li>
