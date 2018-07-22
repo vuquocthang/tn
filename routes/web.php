@@ -108,11 +108,13 @@ Route::middleware('auth')->namespace('User')->group(function (){
 		
 		//xoa-lich-dang/{id}
 		Route::get('/xoa-lich-dang/{id}', 'ThuVienController@xoaLichDang')->name('xoa-lich-dang');
-		
-		
 	});
 	
-	
+	Route::prefix('lich-dang-bai')->name('lich-dang-bai.')->middleware('user')->group(function(){
+		
+		Route::get('danh-sach', 'LichDangBaiController@danhSach')->name('danh-sach');
+		
+	});	
 
 });
 
