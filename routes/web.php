@@ -115,6 +115,13 @@ Route::middleware('auth')->namespace('User')->group(function (){
 		Route::get('danh-sach', 'LichDangBaiController@danhSach')->name('danh-sach');
 		
 	});	
+	
+	//scan uid
+	Route::prefix('scan-uid')->name('scan-uid.')->middleware('user')->group(function(){
+		
+		Route::get('', 'ScanUIDController@index')->name('index');
+		
+	});	
 
 });
 
