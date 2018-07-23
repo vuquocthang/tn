@@ -37,6 +37,13 @@ return [
             'driver' => 'stack',
             'channels' => ['single'],
         ],
+		
+		'addfriend' => [
+			'driver' => 'single',
+			//'name' => 'addfriend',
+			//'channels' => ['single'],
+			'path' => storage_path('logs/addfriend.log'),
+		],
 
         'single' => [
             'driver' => 'single',
