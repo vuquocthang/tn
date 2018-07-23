@@ -40,7 +40,7 @@ return [
 		
 		'addfriend' => [
 			'driver' => 'single',
-			'name' => 'addfriend',
+			//'name' => 'addfriend',
 			//'channels' => ['single'],
 			'path' => storage_path('logs/addfriend.log'),
 			'level' => 'debug',
