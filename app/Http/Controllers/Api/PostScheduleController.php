@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\PostCatSchedule;
 use Illuminate\Support\Facades\DB;
+use App\PostCatSchedulePerformed;
 
 class PostScheduleController extends Controller
 {
@@ -59,6 +60,6 @@ class PostScheduleController extends Controller
 	
 	//performed 
 	public function performed(Request $request){
-		return DB::table('post_cat_schedule_performed')->insert($request->all());
+		return PostCatSchedulePerformed::create($request->all());
 	}
 }
