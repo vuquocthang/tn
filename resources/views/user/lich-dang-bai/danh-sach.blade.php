@@ -48,13 +48,14 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
+												<th>Chủ Nhật</th>
                                                 <th>Thứ Hai</th>
                                                 <th>Thứ Ba</th>
                                                 <th>Thứ Tư</th>
                                                 <th>Thứ Năm</th>
 												<th>Thứ Sáu</th>
 												<th>Thứ Bảy</th>
-												<th>Chủ Nhật</th>
+												
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -62,7 +63,7 @@
                                             <tr>
                                                 <td>{{ $hour }}:00</td>
                                                 
-												@for($date=0; $date<=6; $date++)
+												@for($date=1; $date<=7; $date++)
 													<td>
 														@if( $user->postCatSchedulesByDateAndHour($date, $hour)->count() > 0 )
 															@foreach($user->postCatSchedulesByDateAndHour($date, $hour)->get() as $schedule  )
