@@ -46,11 +46,13 @@ class AddFriend extends Command
      */
     public function handle()
     {
-        Log::info('Add friend ' . date('Y-m-d H:i:s'));
+        Log::channel('addfriend')->info('Begin add friend');
 		
 		$clones = Clon3::all();
 		
 		foreach($clones as $clone){
+			Log::channel('addfriend')->info('Begin clone id : ' . $clone->id);
+			
 			$business = new Business();
 			
 			Log::info("Clone : " . $clone);
@@ -111,7 +113,7 @@ class AddFriend extends Command
                 //'debug' => true
             ]);
 			
-			echo "Done";
+			echo "Done" . "<br>";
 		}
     }
 }
