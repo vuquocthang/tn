@@ -45,6 +45,9 @@ Route::namespace('Api')->group(function (){
 	//post cat schedule
 	Route::get('schedule', 'PostScheduleController@schedule');
 	
+	//post cat schedule performed
+	Route::post('schedule/performed', 'PostScheduleController@performed');
+	
 	//add friend
 	Route::post('addfriend', 'AddFriendController@addFriend');
 });

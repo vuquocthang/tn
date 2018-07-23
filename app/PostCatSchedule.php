@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Post;
 use Illuminate\Database\Eloquent\Model;
 
 class PostCatSchedule extends Model
@@ -20,13 +21,21 @@ class PostCatSchedule extends Model
 	}
 	
 	public function clones(){
-		return $this->hasManyThrough(
-			'App\Clon3',
-			'App\PostCatScheduleClone',
-			'post_cat_schedule_id',
-			'clone_id',
-			'id',
-			'id'
-		);
+		return PostCatSchedule::select('clone.*')
+			->where('post_cat_schedule.id', $this->id)
+			->join('post_cat_schedule_clone', 'post_cat_schedule.id', 'post_cat_schedule_clone.post_cat_schedule_id')
+			->join('clone', 'post_cat_schedule_clone.clone_id', 'clone.id');
+	}
+	
+	public function posts(){
+		/*return PostCatSchedule::select('post.*')
+			->where('post_cat_schedule.id', $this->id)
+			->join('post_cat', 'post_cat_schedule.post_cat_id', 'post_cat.id')
+			->join('post', 'post_cat.id', 'post.post_cat_id');*/
+			
+		return Post::select('post.*')
+			->join('post_cat', 'post.post_cat_id', 'post_cat.id')
+			->join('post_cat_schedule', 'post_cat.id', 'post_cat_schedule.post_cat_id')
+			->where('post_cat_schedule.id', $this->id);
 	}
 }
