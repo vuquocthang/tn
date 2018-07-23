@@ -421,6 +421,16 @@
                             </ul>
                         </li>
                         <!-- End Lich Dang Bai-->
+						
+						<!-- Scan UID -->
+						<li class="{{ \Request::route()->getName() == 'scan-uid' ? 'active' : '' }}">
+                            <a href="{{ route('scan-uid.index') }}">
+                                <i class="fa fa-clock-o"></i>
+                                <span class="title">Quét UID</span>
+          
+                            </a>
+                        </li>
+						<!-- End Scan UID-->
 
                         @else
                         <li class="{{ \Request::route()->getName() == 'admin.keyword.index' || \Request::route()->getName() == 'admin.keyword.add' ? 'active' : '' }}">
