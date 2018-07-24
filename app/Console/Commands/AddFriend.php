@@ -53,67 +53,69 @@ class AddFriend extends Command
 		foreach($clones as $clone){
 			Log::channel('addfriend')->info('Begin clone id : ' . $clone->id);
 			
-			$business = new Business();
+			try{
+				$business = new Business();
 			
-			Log::info("Clone : " . $clone);
+				Log::channel('addfriend')->info("Clone : " . $clone);
 
-            $unsentUids = $clone->unsentFriendRequestUids()->toArray();
-			
+				$unsentUids = $clone->unsentFriendRequestUids()->toArray();
+				
 
-            $N = 20;
-            
-			switch ( $business->createdCloneAgo($clone) % 8 ){
-                case 0:
-                    $N = 20;
-                    break;
-                case 1:
-                    $N = 50;
-                    break;
-                case 2:
-                    $N = 100;
-                    break;
-                case 3:
-                    $N = 200;
-                    break;
-                case 4:
-                    $N = 300;
-                    break;
-                case 5:
-                    $N = 500;
-                    break;
-                case 6:
-                    $N = 1000;
-                    break;
-                case 7:
-                    $N = 1000;
-            }
+				$N = 20;
+				
+				switch ( $business->createdCloneAgo($clone) % 8 ){
+					case 0:
+						$N = 20;
+						break;
+					case 1:
+						$N = 50;
+						break;
+					case 2:
+						$N = 100;
+						break;
+					case 3:
+						$N = 200;
+						break;
+					case 4:
+						$N = 300;
+						break;
+					case 5:
+						$N = 500;
+						break;
+					case 6:
+						$N = 1000;
+						break;
+					case 7:
+						$N = 1000;
+				}
 
-            echo "N = " . $N . "\n";
+				echo "N = " . $N . "\n";
 
-            $uids = $clone->readyFriendRequestUids($unsentUids, $N);
-			
-			$clone->uids = $uids;
-			
-			//var_dump($uids);
-			
-			//echo config('services.python_server_url');
-			
-			
-			//add friend
-            $client = new Client(['base_uri' =>  config('services.python_server_url') ]);
+				$uids = $clone->readyFriendRequestUids($unsentUids, $N);
+				
+				$clone->uids = $uids;
+		
+				
+				//add friend
+				$client = new Client(['base_uri' =>  config('services.python_server_url') ]);
 
-            $response = $client->request('POST', '/add-friend', [
-                'form_params' => [
-                    'clone' => json_encode($clone)
-                ],
+				$response = $client->request('POST', '/add-friend', [
+					'form_params' => [
+						'clone' => json_encode($clone)
+					],
 
-                'headers' => [
-                    'User-Agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
-                ],
-                //'debug' => true
-            ]);
+					'headers' => [
+						'User-Agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
+					],
+					//'debug' => true
+				]);
+				
+				echo "Done" . "<br>";
+				Log::channel('addfriend')->info("Clone id done: " . $clone->id);	
+			}catch ( \Exception $e){
+				Log::channel('addfriend')->info("Clone id ex: " . $clone->id . " " . $e);	
+			}
 			
-			echo "Done" . "<br>";
 		}
     }
 }
