@@ -22,6 +22,7 @@ class LichDangBaiController extends Controller
 		
 			$postCatSchedule = $user->postCatSchedule($id);
 			$postCatSchedule->postCatScheduleClones()->delete();
+			$postCatSchedule->postCatSchedulePerformeds()->delete();
 			$postCatSchedule->delete();
 		}catch(\Exception $e){
 			
