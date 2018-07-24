@@ -260,7 +260,6 @@
 	
 	<!-- Export processing  -->
 	<script>
-		
 		var exportBtn = document.getElementById('export');
 		exportBtn.onclick=function(){
 			let datas = '';
