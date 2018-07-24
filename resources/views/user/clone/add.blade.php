@@ -44,15 +44,23 @@
                                 @csrf
 
                                 <fieldset>
-
-                                    <div class="form-group hide-when-birthday">
+									{{--
+									<div class="form-group hide-when-birthday">
                                         <label class="col-md-3 control-label" for="uid">Uid</label>
                                         <div class="col-md-6">
                                             <input id="uid" name="uid" type="text" placeholder="Uid" class="form-control" required>
                                         </div>
-                                    </div>
-
-                                    <div class="form-group hide-when-birthday">
+                                    </div>--}}
+									
+									<div class="form-group">
+										<label class="col-md-3 control-label" for="message">Cookie</label>
+										<div class="col-md-6">
+											<textarea class="form-control resize_vertical" id="message" name="cookie" placeholder="Nhập Cookie" rows="15" required=""></textarea>
+										</div>
+									</div>
+									
+									{{--
+									<div class="form-group hide-when-birthday">
                                         <label class="col-md-3 control-label" for="c_user">c_user</label>
                                         <div class="col-md-6">
                                             <input id="c_user" name="c_user" type="text" placeholder="C_user" class="form-control" required>
@@ -64,7 +72,7 @@
                                         <div class="col-md-6">
                                             <input id="xs" name="xs" type="text" placeholder="Xs" class="form-control" required>
                                         </div>
-                                    </div>
+                                    </div>--}}
 									
 									<div class="form-group hide-when-birthday">
                                         <label class="col-md-3 control-label" for="xs">Ghi Chú</label>

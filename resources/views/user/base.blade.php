@@ -316,12 +316,7 @@
                                         <i class="fa fa-angle-double-right"></i> Add
                                     </a>
                                 </li>
-
-                                <li class="{{ \Request::route()->getName() == 'clone.upload' ? 'active' : '' }}">
-                                    <a href="{{ route('clone.upload') }}">
-                                        <i class="fa fa-angle-double-right"></i> Upload
-                                    </a>
-                                </li>
+								
                                 <li class="{{ \Request::route()->getName() == 'clone.index' ? 'active' : '' }}">
                                     <a href="{{ route('clone.index') }}">
                                         <i class="fa fa-angle-double-right"></i> Index
@@ -330,6 +325,7 @@
                             </ul>
                         </li>
 
+						{{--
                         <!-- Post -->
                         <li class="{{ \Request::route()->getName() == 'post.index' || \Request::route()->getName()  == 'post.add' ? 'active' : '' }}">
                             <a href="{{ route('clone.index') }}">
@@ -351,7 +347,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <!-- End post -->
+                        <!-- End post --> --}}
 
                         <!-- Thu vien -->
                         <li class="{{ \Request::route()->getName() == 'thu-vien.chuyen-muc' || \Request::route()->getName()  == 'thu-vien.danh-sach' ? 'active' : '' }}">

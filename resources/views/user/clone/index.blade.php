@@ -50,8 +50,6 @@
                                         <td>#</td>
                                         <td>Uid</td>
 										<td>Ghi Chú</td>
-                                        <td>Cookie</td>
-
                                         <td>Hành Động</td>
                                         <td>Hành Động</td>
                                     </tr>
@@ -60,14 +58,12 @@
 
                                     @foreach($clones as $index => $clone)
                                     <tr>
-                                        <td>{{ $index++ }}</td>
+                                        <td>{{ $index + 1 }}</td>
                                         <td>
                                             <a href="https://fb.com/{{ $clone->uid }}" target="_blank">{{ $clone->uid }}</a>
                                         </td>
 										
 										<td>{{ $clone->note }}</td>
-										
-                                        <td>{{ $clone->c_user . ';' . $clone->xs }}</td>
 
                                         <td>
                                             <button class="btn btn-raised btn-warning" onclick="window.location.href='{{ route('clone.edit', $clone->id) }}'">Sửa</button>
