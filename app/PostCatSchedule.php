@@ -27,6 +27,10 @@ class PostCatSchedule extends Model
 			->join('clone', 'post_cat_schedule_clone.clone_id', 'clone.id');
 	}
 	
+	public function postCatScheduleClones(){
+		return $this->hasMany('App\PostCatScheduleClone');
+	}
+	
 	public function posts(){
 		/*return PostCatSchedule::select('post.*')
 			->where('post_cat_schedule.id', $this->id)
