@@ -40,7 +40,10 @@ class Test extends Command
     public function handle()
     {
         //
-		//Log::info("Test: " . date("Y-m-d H:i:s"));
+//		Log::info("Test: " . date("Y-m-d H:i:s"));
 		Log::channel('addfriend')->info('Addfriend');
+
+	// Log::useDailyFiles(storage_path().'/logs/addfriend.log');
+     	//Log::info("addfriend");
     }
 }
