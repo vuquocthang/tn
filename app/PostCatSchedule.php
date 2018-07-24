@@ -32,7 +32,7 @@ class PostCatSchedule extends Model
 	}
 	
 	public function postCatSchedulePerformeds(){
-		return $this->hasMany('App\postCatSchedulePerformed');
+		return $this->hasMany('App\PostCatSchedulePerformed');
 	}
 	
 	public function posts(){
