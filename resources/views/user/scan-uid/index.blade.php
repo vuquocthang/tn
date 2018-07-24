@@ -43,7 +43,7 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label" for="name">Id( Group Id, Post Id, Page Id )</label>
                                         <div class="col-md-6">
-                                            <input type="text" name="id" id="fbid" class="form-control" required>
+                                            <input type="text" name="id" id="fbid" value="863559777168444" class="form-control" required>
                                         </div>
                                     </div>
 									
@@ -83,7 +83,14 @@
                                 Kết Quả <span id="counter">0</span>
                             </div>
                         </div>
+						
+						
+										
                         <div class="portlet-body">
+							<div class="row">
+								<a type="button" id="export" class="btn btn-responsive btn-danger btn-sm">Lưu Ra File</a>
+							</div>
+						
                             <div class="table-scrollable">
                                 <table class="table table-hover">
                                     <thead>
@@ -145,7 +152,7 @@
 								'<tr class="r">' +
 								'<td>0</td>' +
 								'<td>'+
-								'<a href="https://fb.com/' + item['id'] + '" target="_blank">'+ item['name'] +'</a>' +
+								'<a data-uid="' + item['id'] + '" href="https://fb.com/' + item['id'] + '" target="_blank">'+ item['name'] +'</a>' +
 								'</td>' +
 								'</tr>'
 							)
@@ -162,7 +169,7 @@
 								'<tr class="r">' +
 								'<td>0</td>' +
 								'<td>'+
-								'<a href="https://fb.com/' + item['id'] + '" target="_blank">'+ item['from']['name'] +'</a>' +
+								'<a data-uid="' + item['id'] + '" href="https://fb.com/' + item['id'] + '" target="_blank">'+ item['from']['name'] +'</a>' +
 								'</td>' +
 								'</tr>'
 							)
@@ -216,7 +223,7 @@
 								'<tr class="r">' +
 								'<td>0</td>' +
 								'<td>'+
-								'<a href="https://fb.com/' + item['id'] + '" target="_blank">'+ item['name'] +'</a>' +
+								'<a data-uid="' + item['id'] + '" href="https://fb.com/' + item['id'] + '" target="_blank">'+ item['name'] +'</a>' +
 								'</td>' +
 								'</tr>'
 							)
@@ -233,7 +240,7 @@
 								'<tr class="r">' +
 								'<td>0</td>' +
 								'<td>'+
-								'<a href="https://fb.com/' + item['id'] + '" target="_blank">'+ item['from']['name'] +'</a>' +
+								'<a data-uid="' + item['id'] + '" href="https://fb.com/' + item['id'] + '" target="_blank">'+ item['from']['name'] +'</a>' +
 								'</td>' +
 								'</tr>'
 							)
@@ -250,4 +257,28 @@
 			})
 		})
 	</script>
+	
+	<!-- Export processing  -->
+	<script>
+		
+		var exportBtn = document.getElementById('export');
+		exportBtn.onclick=function(){
+			let datas = '';
+		
+			$(".r").each(function(){
+				let uid = $(this).find('a').first().attr('data-uid')
+				
+				datas += uid + "\r\n"
+			})
+			
+			//console.log(datas)
+		
+			var a = document.getElementById("export");
+			var file = new Blob([datas], {type: 'text/plain'});
+			a.href = URL.createObjectURL(file);
+			a.download = "data.txt";
+		}
+	
+	</script>
+	<!-- End export -->
 @endsection
