@@ -32,7 +32,7 @@ class Kernel extends ConsoleKernel
         //$schedule->command('AddFriend:perform')->everyFifteenMinutes();
         //$schedule->command('AddFriend2:perform')->dailyAt('12:00');
         //$schedule->command('AddFriend3:perform')->dailyAt('18:00');
-		$schedule->command('Test:perform')->dailyAt('15:08');
+		$schedule->command('Test:perform')->dailyAt('15:20');
     }
 
     /**
