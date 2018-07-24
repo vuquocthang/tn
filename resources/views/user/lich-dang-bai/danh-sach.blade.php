@@ -67,7 +67,13 @@
 													<td>
 														@if( $user->postCatSchedulesByDateAndHour($date, $hour)->count() > 0 )
 															@foreach($user->postCatSchedulesByDateAndHour($date, $hour)->get() as $schedule  )
-															{!! $schedule->postCat()->first()->title !!}<br>
+																<div class="row">
+																	<div class="col-md-6">{!! $schedule->postCat()->first()->title !!}
+																	</div>
+																	<div class="col-md-6">
+																		<a style="color: red" onclick="return confirm('Chắc chắn xóa ?')" href="{{ route('lich-dang-bai.xoa', $schedule->id) }}" >Xóa</a><br>
+																	</div>
+																</div>
 															@endforeach
 														@endif
 													</td>

@@ -109,6 +109,11 @@ class User extends Authenticatable
 		);
 	}
 	
+	public function postCatSchedule($id){
+		return $this->postCatSchedules()
+			->find($id);
+	}
+	
 	public function postCatScheduleClones(){
 		return $this->hasManyDeep('App\PostCatScheduleClone', ['App\PostCat', 'App\PostCatSchedule']);	
 	}
