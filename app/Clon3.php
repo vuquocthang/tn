@@ -18,6 +18,7 @@ class Clon3 extends Model
         'uid',
         'user_id',
 		'note',
+		'cookie',
         'c_user',
         'xs',
         'token',
@@ -67,6 +68,10 @@ class Clon3 extends Model
         shuffle($uids);
         return array_slice($uids, 0, $quantity);
     }
+	
+	public function postCatScheduleClones(){
+		return $this->hasMany('App\PostCatScheduleClone', 'clone_id');
+	}
 	
 	public function myDelete(){
 		//delete uids

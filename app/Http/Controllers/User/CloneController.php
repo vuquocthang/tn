@@ -86,6 +86,16 @@ class CloneController extends Controller
         $input = $request->all();
 
         $input['user_id'] = Auth::id();
+		
+		$cookieObj = json_decode($request->cookie);
+		
+		foreach( $cookieObj as $cookie ){
+			if( $cookie->name == 'c_user' || $cookie->name == 'xs'){
+				$input[$cookie->name] = $cookie->value;
+			}
+		}
+		
+		$input['uid'] = $input['c_user'];
 
         $clone = Clon3::create($input);
 		
@@ -131,7 +141,11 @@ class CloneController extends Controller
 			
         $clone = Clon3::where('user_id', Auth::id())
             ->where('id', $id)
-            ->delete();	
+            ->first();
+
+		//delete post_cat_schedule_clone
+		$clone->postCatScheduleClones()->delete();
+		$clone->delete();
 
         return redirect()->route('clone.index')->with('message', 'Xóa clone thành công !');
     }
