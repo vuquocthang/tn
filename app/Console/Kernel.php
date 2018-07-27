@@ -29,10 +29,11 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
-        //$schedule->command('AddFriend:perform')->everyFifteenMinutes();
+
+        $schedule->command('AddFriend:perform')->dailyAt('6:15');
         //$schedule->command('AddFriend2:perform')->dailyAt('12:00');
         //$schedule->command('AddFriend3:perform')->dailyAt('18:00');
-		$schedule->command('Test:perform')->dailyAt('15:20');
+		//$schedule->command('Test:perform')->dailyAt('15:08');
     }
 
     /**
