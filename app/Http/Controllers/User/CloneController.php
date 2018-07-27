@@ -114,13 +114,17 @@ class CloneController extends Controller
 
     //edit
     public function editForm($id){
-        $clone = Clon3::where('user_id', Auth::id())
-            ->where('id', $id)
-            ->first();
-
-        return view('user.clone.edit', [
-            'clone' => $clone
-        ]);
+        try{
+			$user = Auth::user();
+		
+			$clone = $user->clones()->where('id', $id)->first();
+			
+			return view('user.clone.edit', [
+				'clone' => $clone
+			]);
+		}catch(\Exception $e){
+			return redirect()->route('clone.index');
+		}
     }
 
     public function edit(Request $request, $id){
