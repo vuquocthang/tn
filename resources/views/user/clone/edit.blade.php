@@ -44,6 +44,7 @@
                                 @csrf
 
                                 <fieldset>
+									{{--
 
                                     <div class="form-group hide-when-birthday">
                                         <label class="col-md-3 control-label" for="uid">Uid</label>
@@ -51,6 +52,8 @@
                                             <input id="uid" name="uid" type="text" placeholder="Uid" value="{{ $clone->uid }}" class="form-control" required>
                                         </div>
                                     </div>
+									
+									
 
                                     <div class="form-group hide-when-birthday">
                                         <label class="col-md-3 control-label" for="c_user">c_user</label>
@@ -64,7 +67,14 @@
                                         <div class="col-md-6">
                                             <input id="xs" name="xs" type="text" placeholder="Xs" value="{{ $clone->xs }}" class="form-control" required>
                                         </div>
-                                    </div>
+                                    </div> --}}
+									
+									<div class="form-group">
+										<label class="col-md-3 control-label" for="message">Cookie</label>
+										<div class="col-md-6">
+											<textarea class="form-control resize_vertical" id="message" name="cookie" placeholder="Nhập Cookie" rows="15" required="">{!! $clone->cookie !!}</textarea>
+										</div>
+									</div>
 									
 									<div class="form-group hide-when-birthday">
                                         <label class="col-md-3 control-label" for="xs">Ghi Chú</label>
