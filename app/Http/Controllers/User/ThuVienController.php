@@ -5,7 +5,9 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\PostCat;
+use App\PostFile;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ThuVienController extends Controller
 {
@@ -74,12 +76,63 @@ class ThuVienController extends Controller
 		try{
 			$user = Auth::user();
 		
-			$user->createPost($request->all());
+			$post = $user->createPost($request->all());
+			
+			//update filename
+			PostFile::where('post_id', null)->update([
+				'post_id' => $post->id
+			]);
 		}catch(\Exception $e){
 			
 		}
 		
 		return redirect()->route('thu-vien.danh-sach');
+	}
+	
+	//upload-anh-bai-viet
+	public function uploadAnhBaiViet(Request $request){
+		$path = Storage::putFile('post', $request->file('file'));
+		
+		$fn = basename($path);
+		
+		if( isset($request->post_id) ){
+			$postFile = PostFile::create([
+				'filename' => $fn,
+				'post_id' => $request->post_id
+			]);
+		}else{
+			$postFile = PostFile::create([
+				'filename' => $fn
+			]);
+		}
+		
+		return $postFile;
+	}
+	
+	
+	
+	//xoa-anh-bai-viet
+	public function xoaAnhBaiViet(Request $request){
+		try{
+			PostFile::where('filename', $request->filename)->delete();
+		}catch(\Exception $e){
+			
+		}
+	}
+	
+	//sua-bai-viet/{id}
+	public function suaBaiViet($id, Request $request){
+		try{
+			$user = Auth::user();
+		
+			$post = $user->posts()->find($id)->update($request->all());
+			
+			
+		}catch(\Exception $e){
+			
+		}
+		
+		return redirect()->back();
 	}
 	
 	//xoa-bai-viet/{id}

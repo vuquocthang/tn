@@ -1276,12 +1276,26 @@
         });
 
         var myDropzone = new Dropzone("div#my-awesome-dropzone", {
-            url: "{{ route('post.upload') }}",
+            url: "{{ route('thu-vien.upload-anh-bai-viet') }}",
             headers: {
                 'X-CSRF-TOKEN': '{!! csrf_token() !!}'
             },
-            addRemoveLinks: true
+            addRemoveLinks: true,
+			init: function () {
+				this.on("removedfile", function (file) {
+					$.post("{{ route('thu-vien.xoa-anh-bai-viet') }}", {
+						'filename' : file.filename,
+						'_token' : '{!! csrf_token() !!}'
+					}).done(function(){
+						console.log('removed : ' + file.filename)
+					})
+				});
+            }
         });
+		
+		myDropzone.on("success", function(file,response) {
+			file.filename = response['filename']
+		});
     </script>
 
     @yield('js')
