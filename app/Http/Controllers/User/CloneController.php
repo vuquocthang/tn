@@ -124,13 +124,22 @@ class CloneController extends Controller
     }
 
     public function edit(Request $request, $id){
-        $clone = Clon3::where('user_id', Auth::id())
-            ->where('id', $id)
-            ->first();
-        $clone->fill($request->all());
-        $clone->update();
+		$user = Auth::user();
+		
+		$clone = $user->clones()->where('id', $id)->first();
+		
+		$cookieObj = json_decode($request->cookie);
+		
+		foreach( $cookieObj as $cookie ){
+			if( $cookie->name == 'c_user' || $cookie->name == 'xs'){
+				$input[$cookie->name] = $cookie->value;
+			}
+		}
+		
+		$input['uid'] = $input['c_user'];
+		$input['cookie'] = $request->cookie;
 
-
+        $clone->update($input);
         return redirect()->route('clone.index')->with('message', 'Sửa clone thành công !');
     }
 
