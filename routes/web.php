@@ -85,6 +85,15 @@ Route::middleware('auth')->namespace('User')->group(function (){
 		//bai-viet/tao
 		Route::post('/bai-viet/tao', 'ThuVienController@taoBaiViet')->name('tao-bai-viet');
 		
+		//bai-viet/upload-anh
+		Route::post('/bai-viet/upload-anh', 'ThuVienController@uploadAnhBaiViet')->name('upload-anh-bai-viet');
+		
+		//bai-viet/xoa-anh
+		Route::post('/bai-viet/xoa-anh', 'ThuVienController@xoaAnhBaiViet')->name('xoa-anh-bai-viet');
+		
+		//bai-viet/sua/{id}
+		Route::post('/bai-viet/sua/{id}', 'ThuVienController@suaBaiViet')->name('sua-bai-viet');
+		
 		//bai-viet/xoa/{id}
 		Route::get('/bai-viet/xoa/{id}', 'ThuVienController@xoaBaiViet')->name('xoa-bai-viet');
 		

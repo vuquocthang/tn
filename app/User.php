@@ -76,7 +76,7 @@ class User extends Authenticatable
 	
 	//bai-viet
 	public function createPost($input){
-		\App\Post::create($input);
+		return \App\Post::create($input);
 	}
 	
 	public function deletePost($id){

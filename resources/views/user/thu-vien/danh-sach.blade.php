@@ -77,6 +77,91 @@
     <!-- content -->
 </aside>
 
+@foreach($user->posts()->get() as $post)
+<div class="extended_modals">
+	<!-- Sua bai viet -->
+    <div class="modal fade in" id="sua-bai-viet-{{ $post->id }}" tabindex="-1" role="dialog" aria-hidden="false">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Sửa bài viết</h4>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#tab3-{{ $post->id }}" data-toggle="tab">Nội Dung</a>
+                                </li>
+                                <li>
+                                    <a href="#tab4-{{ $post->id }}" data-toggle="tab">Hình Ảnh</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab3-{{ $post->id }}">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel-body">
+                                                <form class="form-horizontal" action="{{ route('thu-vien.sua-bai-viet', $post->id) }}" method="post">
+                                                    <fieldset>
+														@csrf
+                                                        <div class="form-group">
+                                                            <label class="col-md-2 control-label">Chuyên Mục:</label>
+                                                            <div class="col-md-5">
+                                                                <select name="post_cat_id" class="form-control">
+																	@foreach($user->postCats()->get() as $item)
+                                                                    <option value="{{ $item->id }}"  {{ $item->id == $post->postCat()->first()->id ? 'selected' : '' }}>{{ $item->title }}</option>
+																	@endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-2 control-label">Nội Dung:</label>
+                                                            <div class="col-md-10">
+                                                                <textarea class="form-control resize_vertical" id="message" name="text" placeholder="Nhập nội dung ở đây ..." rows="7">{{ $post->text }}</textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class=" form-group modal-footer">
+                                                            <button type="submit" class="btn btn-primary">Lưu Lại</button>
+                                                            <button type="button" data-dismiss="modal" class="btn btn-default">Hủy Bỏ</button>
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tab4-{{ $post->id }}">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel-body">
+                                                <form class="form-horizontal" action="#" method="post">
+                                                    <fieldset>
+                                                        <div class="form-group">
+                                                            <div class="col-md-12">
+                                                                <div class="dropzone" id="my-awesome-dropzone-{{ $post->id }}">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    <!-- End -->
+</div>
+@endforeach
+
 <div class="extended_modals">
     <!-- Them moi lich dang bai modal -->
         <div class="modal fade in" id="sua-bai-viet" tabindex="-1" role="dialog" aria-hidden="false">
@@ -129,4 +214,47 @@
 <script type="text/javascript" src="{{ asset('HTML') }}/vendors/datatables/js/dataTables.bootstrap.js"></script>
 <script type="text/javascript" src="{{ asset('HTML') }}/vendors/datatables/js/dataTables.responsive.js"></script>
 <script src="{{ asset('HTML') }}/js/pages/table-responsive.js"></script>
+
+	@foreach($user->posts()->get() as $post)
+	<script>
+		$(document).ready(function(){
+			var myDropzone_{{ $post->id }} = new Dropzone("div#my-awesome-dropzone-{{ $post->id }}", {
+				url: "{{ route('thu-vien.upload-anh-bai-viet') }}",
+				headers: {
+					'X-CSRF-TOKEN': '{!! csrf_token() !!}'
+				},
+				addRemoveLinks: true,
+				init: function () {
+					thisDropzone = this
+					
+					@foreach($post->files()->get() as $file)
+						var mockFile = { name: '{{ $file->filename }}', size: {{ Storage::size('post/' . $file->filename) }},  filename: '{{ $file->filename }}' };
+					 
+						thisDropzone.options.addedfile.call(thisDropzone, mockFile);
+	 
+						thisDropzone.options.thumbnail.call(thisDropzone, mockFile, "{{  asset('post/' . $file->filename) }}" );
+					@endforeach
+					
+					this.on("sending", function(file, xhr, formData) {
+						formData.append("post_id", {{ $post->id }} );
+					});
+					
+					this.on("removedfile", function (file) {
+						$.post("{{ route('thu-vien.xoa-anh-bai-viet') }}", {
+							'filename' : file.filename,
+							'_token' : '{!! csrf_token() !!}'
+						}).done(function(){
+							console.log('removed : ' + file.filename)
+						})
+					});
+				}
+			});
+			
+			myDropzone_{{ $post->id }}.on("success", function(file,response) {
+				file.filename = response['filename']
+			});
+		})
+	</script>
+
+	@endforeach
 @endsection
