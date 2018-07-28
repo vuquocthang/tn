@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Proxy;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,6 +19,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::namespace('Api')->group(function (){
     Route::get('proxy', 'ProxyController@index');
+	
+	Route::get('proxies', function(){
+		return Proxy::all();
+	});
+	
+	Route::put('proxy/{id}', function($id, Request $request){
+		$proxy = Proxy::find($id);
+		return $proxy->update($request->all());
+	});	
 
     Route::get('clone', 'CloneController@index');
 
