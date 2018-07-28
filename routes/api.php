@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use App\Proxy;
+use App\Clon3;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,6 +32,16 @@ Route::namespace('Api')->group(function (){
 	});	
 
     Route::get('clone', 'CloneController@index');
+	
+	Route::get('clones', function(){
+		return Clon3::all();
+	});
+	
+	Route::put('clone/{id}', function($id, Request $request){
+		$clon3 = Clon3::find($id);
+		return $clon3->update($request->all());
+	});
+	
 
     /**
      * 
