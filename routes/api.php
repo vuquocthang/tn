@@ -29,6 +29,10 @@ Route::namespace('Api')->group(function (){
 	Route::put('proxy/{id}', function($id, Request $request){
 		$proxy = Proxy::find($id);
 		return $proxy->update($request->all());
+	});
+
+	Route::post('proxy', function(Request $request){
+		return Proxy::create($request->all());
 	});	
 
     Route::get('clone', 'CloneController@index');
