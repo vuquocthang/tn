@@ -32,6 +32,12 @@ Route::namespace('Api')->group(function (){
 	});
 
 	Route::post('proxy', function(Request $request){
+		$proxy = Proxy::where('ip', $request->ip)->first();
+		
+		if($proxy){
+			return $proxy;
+		}
+		
 		return Proxy::create($request->all());
 	});	
 
