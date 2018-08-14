@@ -47,6 +47,10 @@
 										@endforeach
 									</select>
 								</div>
+								
+								<div class="col-md-3">
+                                    <button type="button" class="btn btn-danger btn_sizes">Xóa</button>
+                                </div>
 							</div>
 							<br>		
 									

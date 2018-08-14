@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:admin="http://webns.net/mvcb/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+
+    <channel>
+
+        <title>INSTAVN - Category: Sáng Tạo</title>
+        <link>https://instavn.com/blog/rss/category/sang-tao-instagram</link>
+        <description>INSTAVN - Category: Sáng Tạo</description>
+        <dc:language>en</dc:language>
+        <dc:creator></dc:creator>
+        <dc:rights>INSTAVN (c) Copyright 2018 - a product of iWolf Marketing</dc:rights>
+
+    <item>
+        <title>Bí quyết bán hàng trên Instagram hiệu quả nhất Phần 2</title>
+        <link>https://instavn.com/blog/post/bi-quyet-ban-hang-tren-instagram-hieu-qua-nhat-phan-2</link>
+        <guid>https://instavn.com/blog/post/bi-quyet-ban-hang-tren-instagram-hieu-qua-nhat-phan-2</guid>
+        <description><![CDATA[  ]]></description>
+        <pubDate>2018-07-25 16:38:14</pubDate>
+        <dc:creator>uyenpham</dc:creator>
+    </item>
+    <item>
+        <title>Bí quyết bán hàng trên Instagram hiệu quả nhất Phần 1</title>
+        <link>https://instavn.com/blog/post/bi-quyet-ban-hang-tren-instagram-hieu-qua-nhat-phan-1</link>
+        <guid>https://instavn.com/blog/post/bi-quyet-ban-hang-tren-instagram-hieu-qua-nhat-phan-1</guid>
+        <description><![CDATA[ Nếu bạn đang có ý định kinh doanh trên instagram, hoặc muốn tìm hiểu bí quyết bán hàng hiệu quả để nâng cao doanh số trên trang mạng xã hội này, thì đây chính là bài viết dành cho bạn. ]]></description>
+        <pubDate>2018-07-24 14:02:51</pubDate>
+        <dc:creator>uyenpham</dc:creator>
+    </item>
+
+    </channel>
+</rss>

@@ -228,7 +228,7 @@
 					thisDropzone = this
 					
 					@foreach($post->files()->get() as $file)
-						var mockFile = { name: '{{ $file->filename }}', size: {{ Storage::size('post/' . $file->filename) }},  filename: '{{ $file->filename }}' };
+						var mockFile = { name: '{{ $file->filename }}', size: 0,  filename: '{{ $file->filename }}' };
 					 
 						thisDropzone.options.addedfile.call(thisDropzone, mockFile);
 	 

@@ -68,12 +68,114 @@
 														@if( $user->postCatSchedulesByDateAndHour($date, $hour)->count() > 0 )
 															@foreach($user->postCatSchedulesByDateAndHour($date, $hour)->get() as $schedule  )
 																<div class="row">
-																	<div class="col-md-6">{!! $schedule->postCat()->first()->title !!}
+																	<div class="col-md-8">{!! $schedule->postCat()->first()->title !!}
 																	</div>
-																	<div class="col-md-6">
-																		<a style="color: red" onclick="return confirm('Chắc chắn xóa ?')" href="{{ route('lich-dang-bai.xoa', $schedule->id) }}" >Xóa</a><br>
+																	<div class="col-md-2">
+																		<a href="#schedule-edit-{{ $schedule->id }}" data-toggle="modal" data-href="#schedule-edit-{{ $schedule->id }}">Sửa</a>
+																	</div>
+																	<div class="col-md-2">
+																		<a style="color: red" onclick="return confirm('Chắc chắn xóa ?')" href="{{ route('lich-dang-bai.xoa', $schedule->id) }}" >Xóa</a>
 																	</div>
 																</div>
+																
+																<!-- Them moi lich dang bai modal -->
+																<div class="modal fade in" id="schedule-edit-{{ $schedule->id }}" tabindex="-1" role="dialog" aria-hidden="false">
+																	<div class="modal-dialog modal-lg">
+																		<div class="modal-content">
+																			<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+																				<h4 class="modal-title">Sửa lịch đăng</h4>
+																			</div>
+																			<div class="modal-body">
+																				<div class="row">
+																					<div class="col-md-12">
+																						<div class="panel-body">
+																							<form class="form-horizontal" action="{{ route('thu-vien.sua-lich-dang', $schedule->id) }}" method="post">
+																								<fieldset>
+																									@csrf
+																								
+																									<div class="form-group">
+																										<label class="col-md-2 control-label">Ngày Hẹn:</label>
+																										<div class="col-md-5">
+																											<select name="date" class="form-control" required>
+																												<option selected="selected" value="1" {{ $schedule->date == "1" ? "selected" : "" }} >Sunday</option>
+																												<option value="2" {{ $schedule->date == "2" ? "selected" : "" }}>Monday</option>
+																												<option value="3" {{ $schedule->date == "3" ? "selected" : "" }}>Tuesday</option>
+																												<option value="4" {{ $schedule->date == "4" ? "selected" : "" }}>Wednesday</option>
+																												<option value="5" {{ $schedule->date == "5" ? "selected" : "" }}>Thursday</option>
+																												<option value="6" {{ $schedule->date == "6" ? "selected" : "" }}>Friday</option>
+																												<option value="7" {{ $schedule->date == "7" ? "selected" : "" }}>Saturday</option>
+																											</select>
+																										</div>
+
+																										<div class="col-md-5">
+																											<select name="hour" class="form-control" required>
+																												@for($i=0; $i <24; $i++) 
+																													<option value="{{ $i }}" {{ $i== $schedule->hour ? 'selected' : '' }}>{{ $i }}:00</option>
+																												@endfor
+																											</select>
+																										</div>
+																									</div>
+
+																									<div class="form-group">
+																										<label class="col-md-2 control-label" for="email">Lựa Chọn</label>
+																										<div class="col-md-5">
+																											<select name="post_cat_id" class="form-control" required>
+																												@foreach( $user->postCats()->get() as $index => $item )
+																												<option value="{{ $item->id }}" {{ $item->id == $schedule->post_cat_id ? "selected" : "" }} >{{ $item->title }}</option>
+																												@endforeach
+																											</select>
+																										</div>
+																									</div>
+
+																									<div class="form-group">
+																										<label class="col-md-2 control-label" for="message">Tài Khoản</label>
+
+																										<div class="col-sm-10 pre-scrollable" style="max-height: 180px;">
+																											<table class="table table-striped table-hover">
+																												<tbody>
+																													<tr>
+																														<td colspan="3" align="right">
+																															<button type="button" id="btnSelectAll" class="btn btn-xs btn-info" title="Chọn tất cả Tài khoản">
+																																<i class="fa fa-check"></i> Chọn tất cả
+																															</button>
+																															<button type="button" id="btnSelectNone" class="btn btn-xs btn-default" title="Không chọn Tài khoản nào">
+																																<i class="fa fa-times"></i> Bỏ tất cả
+																															</button>
+																														</td>
+																													</tr>
+																													
+																													@foreach($user->clones()->get() as $index => $item)
+																													<tr>
+																														<td class="text-center">
+																															<input type="checkbox" class="itemcheck" name="clone_id[]" value="{{ $item->id }}">
+																														</td>
+																														<td>
+																															<a class="" href="https://fb.com/{{ $item->uid }}" target="_blank">{{ $item->note }}</a>
+																														</td>
+																													</tr>
+																													@endforeach
+
+																												</tbody>
+																											</table>
+																										</div>
+																									</div>
+
+																									<div class=" form-group modal-footer">
+																										<button type="submit" class="btn btn-primary">Lưu Lại</button>
+																										<button type="button" data-dismiss="modal" class="btn btn-default">Hủy Bỏ</button>
+																									</div>
+																								</fieldset>
+																							</form>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+																<!-- End -->
 															@endforeach
 														@endif
 													</td>
@@ -129,6 +231,8 @@
             </div>
         </div>
     <!-- End -->
+	
+	
 </div>
 
 @endsection @section('js')
