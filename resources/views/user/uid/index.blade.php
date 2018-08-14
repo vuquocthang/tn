@@ -49,7 +49,7 @@
 								</div>
 								
 								<div class="col-md-3">
-                                    <a onclick="return confirm('Chắc chắn xóa ?');" href="{{ route('uid.delete', request()->query('clone_id')) }}" class="btn btn-danger btn_sizes">Xóa</a>
+                                    <a onclick="return confirm('Chắc chắn xóa ?');" href="{{ route('uid.delete', \Illuminate\Support\Facades\Input::get('clone_id') ) }}" class="btn btn-danger btn_sizes">Xóa</a>
                                 </div>
 							</div>
 							<br>		
