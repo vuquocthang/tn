@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\PostCat;
+use App\PostCatSchedule;
 use App\PostFile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -164,6 +165,16 @@ class ThuVienController extends Controller
 	//lich-dang
 	public function lichDang(Request $request){
 		return view('user.thu-vien.lich-dang');
+	}
+	
+	//sua-lich-dang
+	public function suaLichDang($id,Request $request){
+		$postCatSchedule = PostCatSchedule::find($id);
+		
+		//dd($postCatSchedule);
+		
+		$postCatSchedule->update($request->all());
+		return redirect()->back();
 	}
 	
 	//xoa-lich-dang

@@ -13,8 +13,12 @@
 
 Auth::routes();
 
+Route::get('/', 'HomeController@index')->name('home');
+
 Route::middleware('auth')->namespace('User')->group(function (){
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/dashboard', function(){
+		return view('user.base');
+	});
 
     //clone
     Route::prefix('clone')->name('clone.')->middleware('user')->group(function(){
@@ -57,6 +61,9 @@ Route::middleware('auth')->namespace('User')->group(function (){
 		
 		//sent
         Route::get('/sent', 'UidController@sent')->name('sent');
+		
+		//delete 
+		Route::get('/delete/{clone_id}', 'UidController@delete')->name('delete');
     });
 	
 	//post
@@ -111,6 +118,9 @@ Route::middleware('auth')->namespace('User')->group(function (){
 		
 		//lich-dang/tao
 		Route::post('/lich-dang/tao', 'ThuVienController@taoLichDang')->name('tao-lich-dang');
+		
+		//lich-dang/sua
+		Route::post('/lich-dang/sua/{id}', 'ThuVienController@suaLichDang')->name('sua-lich-dang');
 		
 		//lich-dang
 		Route::get('/lich-dang', 'ThuVienController@lichDang')->name('lich-dang');

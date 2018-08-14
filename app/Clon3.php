@@ -50,6 +50,11 @@ class Clon3 extends Model
 			->get();
 	}
 	
+	public function uids2(){
+		return $this
+			->hasMany('App\Uid', 'clone_id', 'id');
+	}
+	
 	public function sentFriendRequestUids(){
 		return $this
 			->hasMany('App\FriendRequest', 'clone_id', 'id')

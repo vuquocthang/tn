@@ -113,4 +113,12 @@ class UidController extends Controller
 
         return redirect()->route('uid.index');
     }
+	
+	public function delete($clone_id){
+		$clone = Clon3::find($clone_id);
+		
+		$clone->uids2()->delete();
+		
+		return redirect()->back();
+	}
 }
