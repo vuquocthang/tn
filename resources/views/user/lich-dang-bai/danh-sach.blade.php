@@ -136,19 +136,20 @@
 																												<tbody>
 																													<tr>
 																														<td colspan="3" align="right">
-																															<button type="button" id="btnSelectAll" class="btn btn-xs btn-info" title="Chọn tất cả Tài khoản">
+																															<button type="button" id="btnSelectAll{{ $schedule->id }}" class="btn btn-xs btn-info" title="Chọn tất cả Tài khoản">
 																																<i class="fa fa-check"></i> Chọn tất cả
 																															</button>
-																															<button type="button" id="btnSelectNone" class="btn btn-xs btn-default" title="Không chọn Tài khoản nào">
+																															<button type="button" id="btnSelectNone{{ $schedule->id }}" class="btn btn-xs btn-default" title="Không chọn Tài khoản nào">
 																																<i class="fa fa-times"></i> Bỏ tất cả
 																															</button>
 																														</td>
 																													</tr>
 																													
+																													
 																													@foreach($user->clones()->get() as $index => $item)
 																													<tr>
 																														<td class="text-center">
-																															<input type="checkbox" class="itemcheck" name="clone_id[]" value="{{ $item->id }}">
+																															<input type="checkbox" class="itemcheck{{ $schedule->id }}" name="clone_id[]" value="{{ $item->id }}" {{ $schedule->isCloneOfSchedule($user, $item->id) ? 'checked' : '' }} >
 																														</td>
 																														<td>
 																															<a class="" href="https://fb.com/{{ $item->uid }}" target="_blank">{{ $item->note }}</a>
@@ -159,7 +160,7 @@
 																												</tbody>
 																											</table>
 																										</div>
-																									</div>
+																									</div>																						 
 
 																									<div class=" form-group modal-footer">
 																										<button type="submit" class="btn btn-primary">Lưu Lại</button>
@@ -176,6 +177,23 @@
 																	</div>
 																</div>
 																<!-- End -->
+																<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+																<script>
+																	$("#btnSelectAll{{ $schedule->id }}").click(function() {
+																		$(".itemcheck{{ $schedule->id }}").each(function() {
+																			$(this).prop("checked", true);
+																		});
+																	});
+
+																	$("#btnSelectNone{{ $schedule->id }}").click(function() {
+																		$(".itemcheck{{ $schedule->id }}").each(function() {
+																			$(this).prop("checked", false);
+																		});
+																	});
+																
+																</script>
+																
 															@endforeach
 														@endif
 													</td>
