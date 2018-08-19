@@ -172,8 +172,19 @@ class ThuVienController extends Controller
 		$postCatSchedule = PostCatSchedule::find($id);
 		
 		//dd($postCatSchedule);
-		
 		$postCatSchedule->update($request->all());
+		
+		
+		//xoa clone  cua lich dang
+		\App\PostCatScheduleClone::where('post_cat_schedule_id', $id)->delete();
+		
+		foreach($request->clone_id as $cloneId){
+			\App\PostCatScheduleClone::create([
+				'post_cat_schedule_id' => $id,
+				'clone_id' => $cloneId
+			]);
+		}
+		
 		return redirect()->back();
 	}
 	

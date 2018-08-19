@@ -46,4 +46,20 @@ class PostCatSchedule extends Model
 			->join('post_cat_schedule', 'post_cat.id', 'post_cat_schedule.post_cat_id')
 			->where('post_cat_schedule.id', $this->id);
 	}
+	
+	public function isCloneOfSchedule($user, $cloneId){
+		$clone_ids = [];
+		
+		foreach($this->clones()->get() as $clone){
+			array_push($clone_ids, $clone->id);
+		}
+		
+		foreach($clone_ids as $id){
+			if( $id == $cloneId ){
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }
