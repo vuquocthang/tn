@@ -117,6 +117,11 @@ class UidController extends Controller
     }
 	
 	public function delete($clone_id){
+		if($clone_id == "all"){
+			Uid::query()->delete();
+			return redirect()->back();
+		}
+
 		$clone = Clon3::find($clone_id);
 		
 		$clone->uids2()->delete();
