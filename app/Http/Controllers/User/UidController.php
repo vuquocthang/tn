@@ -121,11 +121,7 @@ class UidController extends Controller
 			Uid::query()->delete();
 			return redirect()->back();
 		}
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> 9f268fb21d7f1ad57e9455498f7b5c5edf23d577
 		$clone = Clon3::find($clone_id);
 		
 		$clone->uids2()->delete();
