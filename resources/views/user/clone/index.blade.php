@@ -50,6 +50,7 @@
                                         <td>#</td>
                                         <td>Uid</td>
 										<td>Ghi Chú</td>
+										<td>Trạng Thái</td>
                                         <td>Hành Động</td>
                                         <td>Hành Động</td>
                                     </tr>
@@ -64,6 +65,8 @@
                                         </td>
 										
 										<td>{{ $clone->note }}</td>
+										
+										<td>{{ $clone->status }}</td>
 
                                         <td>
                                             <button class="btn btn-raised btn-warning" onclick="window.location.href='{{ route('clone.edit', $clone->id) }}'">Sửa</button>
