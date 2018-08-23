@@ -18,7 +18,7 @@ class PostScheduleController extends Controller
 			->get();
 			
 		foreach($schedules as $schedule){
-			$schedule->clones = $schedule->clones()->get();
+			$schedule->clones = $schedule->clones()->where('status', 'Live')->get();
 		
 			$post = $schedule->posts()->orderBy('updated_at', 'ASC')->first();
 		

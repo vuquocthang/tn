@@ -426,7 +426,30 @@
           
                             </a>
                         </li>
-						<!-- End Scan UID-->
+						<!-- End Scan UID -->
+						
+						<!-- Group -->
+						<li class="{{ \Request::route()->getName() == 'group.index' ? 'active' : '' }}">
+                            <a href="{{ route('group.index') }}">
+                                <i class="fa fa-clock-o"></i>
+                                <span class="title">Group</span>
+                                <span class="fa arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="{{ \Request::route()->getName() == 'group.index' ? 'active' : '' }}">
+                                    <a href="{{ route('group.index') }}">
+                                        <i class="fa fa-tasks"></i> Danh Sách
+                                    </a>
+                                </li>
+
+                                <li class="{{ \Request::route()->getName() == 'group.add' ? 'active' : '' }}">
+                                    <a href="{{ route('group.add') }}" >
+                                        <i class="fa fa-plus"></i> Thêm Mới
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+						<!-- End Group -->
 
                         @else
                         <li class="{{ \Request::route()->getName() == 'admin.keyword.index' || \Request::route()->getName() == 'admin.keyword.add' ? 'active' : '' }}">

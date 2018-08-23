@@ -144,6 +144,16 @@ Route::middleware('auth')->namespace('User')->group(function (){
 		Route::get('', 'ScanUIDController@index')->name('index');
 		
 	});	
+	
+	//group
+	Route::prefix('group')->name('group.')->middleware('user')->group(function(){
+		
+		Route::get('add', 'GroupController@addForm')->name('add');
+		
+		Route::post('add', 'GroupController@add')->name('add');
+		
+		Route::get('index', 'GroupController@index')->name('index');
+	});	
 
 });
 

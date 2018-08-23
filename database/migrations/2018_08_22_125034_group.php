@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Configs extends Migration
+class Group extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class Configs extends Migration
      */
     public function up()
     {
-        Schema::create('configs', function (Blueprint $table) {
+        Schema::create('group', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('value');
-            $table->integer('status')->default(0);
+			
+			$table->integer('user_id')->unsigned()->nullable();
+			$table->foreign('user_id')->references('id')->on('users');
+			
+			$table->string('uid');
+			
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class Configs extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('configs');
+        Schema::dropIfExists('group');
     }
 }
