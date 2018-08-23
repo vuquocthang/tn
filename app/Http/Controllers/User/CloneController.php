@@ -142,6 +142,7 @@ class CloneController extends Controller
 		
 		$input['uid'] = $input['c_user'];
 		$input['cookie'] = $request->cookie;
+		$input['status'] = 'Live';
 
         $clone->update($input);
         return redirect()->route('clone.index')->with('message', 'Sửa clone thành công !');
