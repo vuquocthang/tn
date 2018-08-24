@@ -41,7 +41,10 @@ Route::namespace('Api')->group(function (){
 		return Proxy::create($request->all());
 	});	
 
+	//clone apis
     Route::get('clone', 'CloneController@index');
+	
+	Route::get('clone/{status}', 'CloneController@status');
 	
 	Route::get('clones', function(){
 		return Clon3::all();
@@ -51,7 +54,7 @@ Route::namespace('Api')->group(function (){
 		$clon3 = Clon3::find($id);
 		return $clon3->update($request->all());
 	});
-	
+	//end clone apis
 
     /**
      * 

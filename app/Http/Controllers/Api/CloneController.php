@@ -26,4 +26,27 @@ class CloneController extends Controller
         
         return $clone;
     }
+	
+	public function status()
+    {
+        $clone = Clon3::where('status', 'Live')->orderBy('updated_at', 'ASC')->first();
+        
+		if(!$clone){
+			return null;
+		}
+		
+		$clone->touch();
+
+        if( empty($clone->ip) && empty($clone->port) ){
+            $proxy = Proxy::orderBy('updated_at', 'ASC')->first();
+            $proxy->touch();
+
+            $clone->update([
+                'ip' => trim($proxy->ip),
+                'port' => trim($proxy->port)
+            ]);
+        }
+        
+        return $clone;
+    }
 }
