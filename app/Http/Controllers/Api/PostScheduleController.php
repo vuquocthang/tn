@@ -16,6 +16,8 @@ class PostScheduleController extends Controller
 			->whereRaw('date = DAYOFWEEK( NOW() )')
 			->whereRaw('id NOT IN (SELECT post_cat_schedule_id FROM post_cat_schedule_performed WHERE DATE(post_cat_schedule_performed.created_at) = DATE(NOW()) )')
 			->get();
+		
+		$tmpSchedules = [];
 			
 		foreach($schedules as $index => $schedule){
 			$schedule->clones = $schedule->clones()->where('status', 'Live')->get();
@@ -28,12 +30,12 @@ class PostScheduleController extends Controller
 				$post->files = $post->files()->get();
 				
 				$schedule->post = $post;
-			}else{
-				unset($schedules[$index]);
+				
+				$tmpSchedules[] = $schedule;
 			}
 		}	
 		
-		return $schedules;
+		return $tmpSchedules;
 		
 		/*
 		return $schedules;
