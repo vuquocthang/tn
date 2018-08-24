@@ -121,7 +121,7 @@
 																										<label class="col-md-2 control-label" for="email">Lựa Chọn</label>
 																										<div class="col-md-5">
 																											<select name="post_cat_id" class="form-control" required>
-																												@foreach( $user->postCats()->get() as $index => $item )
+																												@foreach( $user->postCats()->has('posts')->get() as $index => $item )
 																												<option value="{{ $item->id }}" {{ $item->id == $schedule->post_cat_id ? "selected" : "" }} >{{ $item->title }}</option>
 																												@endforeach
 																											</select>
