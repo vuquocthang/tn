@@ -40,11 +40,13 @@ class PostCatSchedule extends Model
 			->where('post_cat_schedule.id', $this->id)
 			->join('post_cat', 'post_cat_schedule.post_cat_id', 'post_cat.id')
 			->join('post', 'post_cat.id', 'post.post_cat_id');*/
-			
+		/*	
 		return Post::select('post.*')
 			->join('post_cat', 'post.post_cat_id', 'post_cat.id')
 			->join('post_cat_schedule', 'post_cat.id', 'post_cat_schedule.post_cat_id')
-			->where('post_cat_schedule.id', $this->id);
+			->where('post_cat_schedule.id', $this->id);*/
+			
+		return $this->postCat()->first()->posts();	
 	}
 	
 	public function isCloneOfSchedule($user, $cloneId){
