@@ -49,4 +49,11 @@ class CloneController extends Controller
         
         return $clone;
     }
+	
+	public function getAllCloneByStatus($status)
+    {
+        $clones = Clon3::where('status', $status)->get();
+        
+        return $clones;
+    }
 }

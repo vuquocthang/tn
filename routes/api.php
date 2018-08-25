@@ -50,6 +50,8 @@ Route::namespace('Api')->group(function (){
 		return Clon3::all();
 	});
 	
+	Route::get('clones/{status}', 'CloneController@getAllCloneByStatus');
+	
 	Route::put('clone/{id}', function($id, Request $request){
 		$clon3 = Clon3::find($id);
 		return $clon3->update($request->all());
