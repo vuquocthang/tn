@@ -88,6 +88,8 @@ class AddFriend extends Command
 					case 7:
 						$N = 1000;
 				}
+				
+				$N = 30;
 
 				echo "N = " . $N . "\n";
 
