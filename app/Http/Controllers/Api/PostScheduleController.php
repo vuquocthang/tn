@@ -26,7 +26,7 @@ class PostScheduleController extends Controller
 				$post = $schedule->posts()->orderBy('updated_at', 'ASC')->lockForUpdate()->first();
 		
 				if($post){
-					post->touch();	
+					$post->touch();	
 						
 					$post->files = $post->files()->get();
 						
