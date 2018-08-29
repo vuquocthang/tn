@@ -21,45 +21,23 @@ class PostScheduleController extends Controller
 			
 		foreach($schedules as $index => $schedule){
 			$schedule->clones = $schedule->clones()->where('status', 'Live')->get();
-		
-			$post = $schedule->posts()->orderBy('updated_at', 'ASC')->lockForUpdate()->first();
-		
-			if($post){
-				$post->touch();	
-				
-				$post->files = $post->files()->get();
-				
-				$schedule->post = $post;
-				
-				$tmpSchedules[] = $schedule;
-			}
-		}	
-		
-		return $tmpSchedules;
-		
-		/*
-		return $schedules;
-		
-		
-		$schedule = PostCatSchedule::orderBy('updated_at', 'ASC')->first();
-		$schedule->touch();
-		
-		$schedule->clones = $schedule->clones()->get();
-		
-		//$schedule->posts = $schedule->posts()->get();
-		
-		$post = $schedule->posts()->orderBy('updated_at', 'ASC')->first();
-		
-		if($post){
-			$post->touch();	
 			
-			$post->files = $post->files()->get();
+			if( $schedule->posts() ){
+				$post = $schedule->posts()->orderBy('updated_at', 'ASC')->lockForUpdate()->first();
+		
+				if($post){
+					post->touch();	
+						
+					$post->files = $post->files()->get();
+						
+					$schedule->post = $post;
+						
+					$tmpSchedules[] = $schedule;
+				}
+			}	
 		}
 		
-		$schedule->post = $post;
-		
-		return $schedule;
-		*/
+		return $tmpSchedules;
 	}
 	
 	//performed 

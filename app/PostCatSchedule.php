@@ -46,7 +46,7 @@ class PostCatSchedule extends Model
 			->join('post_cat_schedule', 'post_cat.id', 'post_cat_schedule.post_cat_id')
 			->where('post_cat_schedule.id', $this->id);*/
 		if( !$this->postCat()->first() ){
-			return [];
+			return null;
 		}		
 	
 		return $this->postCat()->first()->posts();	
