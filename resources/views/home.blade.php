@@ -90,7 +90,7 @@
             </div>
         </div>
 		
-		<div style="padding-left: 200px" class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s" style="bottom: 120px !important; visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
+		<div style="padding-left: 200px"  class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s" style="bottom: 120px !important; visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
             <img width="709px" src="{{ asset('') }}/bg.jpg" alt="">
         </div>
     </section>
