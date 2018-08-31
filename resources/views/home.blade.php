@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#fff">
     <!--Impt End-->
     <meta property="og:image" content="inc/themes/default/assets/img/instavn.html" />
-    <title>ONEBIT - Nền tảng Marketing Facebook Profile</title>
+    <title>ONEBIT - Marketing Facebook Profile</title>
     <meta name="description" content="Nền tảng Facebook Marketing Profile mạnh mẽ, tự động hóa công việc hằng ngày, làm việc mọi nơi, mọi thiết bị với hệ thống da nền tảng tiện dụng, Tiết kiệm thời gian, công cụ hữu ích">
     <meta name="keywords" content="facebook, facebook profile, marketing, công cụ, tự động, content, hack facebook, auto chatbot, auto nhắn tin, auto comment, auto bình luận, fb, lên lịch, marketing, việt nam, auto, hệ thống, nền tảng, khóa, học,">
     <script src="cdn-cgi/apps/head/KJhokXiE0tQ-KeUHKTfkKOXyWT8.js"></script>
@@ -37,7 +37,9 @@
                     <div class="menu_area">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <!-- Logo -->
-                            <a class="navbar-brand" href="#"><img style="position: relative;height: 40px;bottom: 5px;" src="{{ asset('') }}/front/inc/themes/default/assets/img/logo.png"></a>
+                            <a class="navbar-brand" href="#">
+								<img style="position: relative;height: 40px;bottom: 5px;" src="{{ asset('') }}/Onebitlogo.png">
+							</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
@@ -73,20 +75,23 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-md">
                     <div class="wellcome-heading">
-                        <h2 style="line-height: 0.5 !important;"><span style="font-family: 'Cookie', cursive;font-weight:  400;font-size: 120px;">Update </span>v4.2</h2>
-                        <p>Khám phá phiên bản mới cùng nhiều chức năng mạnh mẽ được tích hợp</p>
+                        <h2 style="line-height: 0.5 !important;"><span style="font-family: 'Cookie', cursive;font-weight:  400;font-size: 120px;">ONEBIT </span>Ver 2</h2>
+                        <br><br><p>Khám phá phiên bản mới cùng nhiều chức năng mạnh mẽ được tích hợp</p>
                     </div>
                     <div class="get-start-area">
                         <!-- Form Start -->
                         <form action="http://autofbmkt.com/login" method="post" class="form-inline">
-                            <span class="trial">*
-                            Đăng ký ngay                       </span>
+                            <span class="trial">                      </span>
                             <input type="submit" class="submit" value="ĐĂNG KÝ NGAY">
                         </form>
                         <!-- Form End -->
                     </div>
                 </div>
             </div>
+        </div>
+		
+		<div style="padding-left: 200px" class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s" style="bottom: 120px !important; visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
+            <img width="709px" src="{{ asset('') }}/bg.jpg" alt="">
         </div>
     </section>
     <!-- ***** Wellcome Area End ***** -->
@@ -98,7 +103,7 @@
                 <div class="col-12">
                     <!-- Section Heading Area -->
                     <div class="section-heading text-center">
-                        <h2>Có gì đặc biệt?</h2>
+                        <h2>CÓ GÌ ĐẶC BIỆT?</h2>
                         <div class="line-shape"></div>
                     </div>
                 </div>
@@ -188,7 +193,7 @@
                 <div class="col-12">
                     <!-- Heading Text -->
                     <div class="section-heading text-center">
-                        <h2>Những <b>TÍNH NĂNG</b> nổi bật</h2>
+                        <h2><b>TÍNH NĂNG NỔI BẬT</b></h2>
                         <div class="line-shape"></div>
                     </div>
                 </div>
@@ -199,8 +204,8 @@
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-feature">
                         <i class="ti-heart" aria-hidden="true"></i>
-                        <h5>Auto Thả Thính</h5>
-                        <p>Auto thả thính giúp tương tác tự động, hành vi được thực hiện theo đa số trừ like. Tốc độ thả thính thông minh được tích hợp sẵn, giúp bảo vệ tài khoản an toàn.</p>
+                        <h5>Auto Interactive</h5>
+                        <p>Chức năng này giúp FB CÁ NHÂN tương tác tự động, chế độ THẢ CẢM XÚC theo số đông LOẠI TRỪ like. Tốc độ THÔNG MINH được tích hợp sẵn, giúp bảo vệ tài khoản AN TOÀN.</p>
                     </div>
                 </div>
                 <!-- Single Feature Start -->
@@ -208,23 +213,23 @@
                     <div class="single-feature">
                         <i class="ti-comments" aria-hidden="true"></i>
                         <h5>Auto Rep Inbox</h5>
-                        <p>Chức năng này giúp bạn trả lời tin nhắn theo từ khóa, kể cả trong tin nhắn chờ. Tích hợp tùy chọn tốc độ và Spintax DM giúp nội dung trả lời tin nhắn phong phú hơn.</p>
+                        <p>Chức năng này giúp bạn TRẢ LỜI TIN NHẮN TỰ ĐỘNG theo từ khóa trên FB CÁ NHÂN. Tích hợp chế độ Random CT giúp nội dung trả lời tin nhắn của bạn vô cùng PHONG PHÚ.</p>
                     </div>
                 </div>
                 <!-- Single Feature Start -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-feature">
                         <i class="ti-comment-alt" aria-hidden="true"></i>
-                        <h5>Auto Trả Lời Bình Luận</h5>
-                        <p>Chức năng auto trả lời bình luận giúp tài khoản cá nhân tự động trả lời bình luận trong bài viết cá nhân theo từ khóa. Tốc độ trả lời thông minh, được tích hợp sẵn. Hỗ trợ chế độ Spintax tránh nội dung bị spam.</p>
+                        <h5>Auto Rep Comment</h5>
+                        <p>Chức năng này giúp bạn TRẢ LỜI BÌNH LUẬN TỰ ĐỘNG theo từ khóa trên FB CÁ NHÂN. Tốc độ trả lời thông minh, được tích hợp sẵn. Hỗ trợ chế độ Random CT tránh nội dung bị spam.</p>
                     </div>
                 </div>
                 <!-- Single Feature Start -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-feature">
                         <i class="ti-stats-up" aria-hidden="true"></i>
-                        <h5>Chúc Mừng Sinh Nhật</h5>
-                        <p>Dễ dàng gia tăng tương tác với danh sách bạn bè. Tự động đăng lời chúc lên tường bạn bè mỗi khi đến ngày sinh nhật. Chế độ thông minh giúp bảo vệ tài khoản tránh spam.</p>
+                        <h5>Auto Birthday Post</h5>
+                        <p>Chức năng này giúp bạn tự động đăng lời CHÚC MỪNG SINH NHẬT lên tường bạn bè mỗi khi đến ngày sinh nhật của họ. Chế độ đăng thông minh giúp bảo vệ tài khoản AN TOÀN.</p>
                     </div>
                 </div>
                 <!-- Single Feature Start -->
@@ -232,39 +237,39 @@
                     <div class="single-feature">
                         <i class="ti-user" aria-hidden="true"></i>
                         <h5>Auto Add Friend</h5>
-                        <p>Tự động gửi lời mời kết bạn theo danh sách tệp khách hàng tiềm năng. Tốc độ và số lượng được cài đặt thông minh. Giúp bảo vệ tài khoản an toàn.</p>
+                        <p>Chức năng này giúp bạn TỰ ĐỘNG KẾT BẠN theo danh sách tệp khách hàng tiềm năng. Tốc độ và số lượng được cài đặt thông minh. Giúp bảo vệ tài khoản AN TOÀN TUYỆT ĐỐI.</p>
                     </div>
                 </div>
                 <!-- Single Feature Start -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-feature">
                         <i class="ti-reload" aria-hidden="true"></i>
-                        <h5>Auto Lọc Bạn Bè</h5>
-                        <p>Tự động sàng lọc tương tác trong danh sách bạn bè, được lên lịch theo chu kỳ. Giúp danh sách bạn bè ngày càng chất lượng và đúng với nhu cầu. Hệ thống phân tích thông minh, được tích hợp sẵn.</p>
+                        <h5>Auto Check Friend</h5>
+                        <p>Chức năng này giúp bạn LỌC DANH SÁCH BẠN BÈ theo chu kỳ để đạt được tệp danh sách bạn bè chất lượng nhất, phù hợp với bạn nhất. Hệ thống phân tích THÔNG MINH, được tích hợp sẵn.</p>
                     </div>
                 </div>
                 <!-- Single Feature Start -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-feature">
                         <i class="ti-timer" aria-hidden="true"></i>
-                        <h5>Lên Lịch Đăng Bài</h5>
-                        <p>Lên lịch hẹn giờ đăng bài cho chiến dịch tuyệt vời của bạn để tiết kiệm thời gian, được phân bổ các ngày trong tuần. Giúp bạn tiết kiệm được rất nhiều thời gian.</p>
+                        <h5>Schedule Post</h5>
+                        <p>Chức năng này giúp bạn LÊN LỊCH ĐĂNG BÀI hàng tuần, hàng tháng, hàng năm trên FB CÁ NHÂN, giúp bạn tiết kiệm rất nhiều thời gian. Hệ thống XỬ LÝ thông minh, được tích hợp sẵn</p>
                     </div>
                 </div>
                 <!-- Single Feature Start -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-feature">
                         <i class="ti-dashboard" aria-hidden="true"></i>
-                        <h5>Hoạt động 24/7</h5>
-                        <p>Hệ thống ONEBIT được chạy trên nền tảng đám mây nên ngay cả khi bạn tắt thiết bị của mình thì ONEBIT vẫn hoạt động theo cài đặt.</p>
+                        <h5>Working 24/7</h5>
+                        <p>Hệ thống ONEBIT được chạy trên nền tảng đám mây nên ngay cả khi bạn TẮT THIẾT BỊ của mình thì ONEBIT vẫn miệt mài HOẠT ĐỘNG 24/24 theo cài đặt của bạn.</p>
                     </div>
                 </div>
                 <!-- Single Feature Start -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-feature">
                         <i class="ti-info-alt" aria-hidden="true"></i>
-                        <h5>Và Còn Hơn Thế Nữa</h5>
-                        <p>Khi là thành viên hệ thống ONEBIT, bạn sẽ được tiếp cận với những phương pháp Marketing Profile vô cùng tuyệt vời. Đặc biệt ưu đãi với những khóa đào tạo từ Lý Bá Thiện.</p>
+                        <h5>And More</h5>
+                        <p>Khi là thành viên hệ thống ONEBIT, bạn sẽ được tiếp cận với những phương pháp Marketing Facebook Profile vô cùng tuyệt vời. Đặc biệt ưu đãi với những khóa đào tạo từ Lý Bá Thiện.</p>
                     </div>
                 </div>
             </div>
@@ -298,7 +303,7 @@
                 <div class="col-12 col-md-3 col-lg-3">
                     <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.2s">
                         <div class="counter-area">
-                            <h3><span class="counter">584</span></h3>
+                            <h3><span class="counter">517</span></h3>
                         </div>
                         <div class="cool-facts-content">
                             <i class="ion-arrow-down-a"></i>
@@ -324,7 +329,7 @@
                 <div class="col-12 col-md-3 col-lg-3">
                     <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.6s">
                         <div class="counter-area">
-                            <h3><span class="counter">1,752</span></h3>
+                            <h3><span class="counter">1,369</span></h3>
                         </div>
                         <div class="cool-facts-content">
                             <i class="ion-social-instagram"></i>
@@ -337,7 +342,7 @@
                 <div class="col-12 col-md-3 col-lg-3">
                     <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.8s">
                         <div class="counter-area">
-                            <h3><span class="counter">44</span></h3>
+                            <h3><span class="counter">37</span></h3>
                         </div>
                         <div class="cool-facts-content">
                             <i class="ion-social-usd"></i>
@@ -416,36 +421,38 @@
                         <div class="package-plan" style="padding: 10px 0;">
                             <h5>Trial</h5>
                             <div class="ca-price d-flex justify-content-center">
-                                <h4>19k/tháng</h4>
+                                <h4>19k/th</h4>
                             </div>
                         </div>
                         <div class="package-description">
-                            <p style="color: red;">Chỉ 1 TK Facebook</p>
+                            <p style="color: red;">1 TK Facebook</p>
                             <p></p>
                             <div class="feature-title">Automation Functions</div>
                             <div>
-                                <span>Auto Thả Thính</span>
+                                <span>Auto Interactive</span>
                                 <br>
                                 <span style="color:red;" class="not">Auto Rep Inbox</span>
                                 <br>
                                 <span style="color:red;" class="not">Auto Rep Comment</span>
                                 <br>
-                                <span style="color:red;" class="not">Auto Chúc Mừng Sinh Nhật</span>
+                                <span style="color:red;" class="not">Auto Birthday Post</span>
                                 <br>
-                                <span style="color:red;" class="not">Auto Kết Bạn</span>
+                                <span style="color:red;" class="not">Auto Add Friend</span>
 								<br>
-                                <span style="color:red;" class="not">Auto Lọc Bạn</span>
+                                <span style="color:red;" class="not">Auto Check Friend</span>
                                 <br>
-                                <span style="color:red;" class="not">Auto Đăng Bài</span>
+                                <span style="color:red;" class="not">Schedule Post</span>
                             </div>
                             <p></p>
+							 <br>
 							 <span>Affiliate</span>
 							 <br>
 							  <span>Coupon</span>
                             <p></p>
-							<p><span>Hỗ trợ lưu trữ tài nguyên</span>
+							<p><span>Bộ Nhớ lưu trữ tài nguyên</span>
 							<br>
-                            <span style="color: red;">Bộ nhớ: <span class="color-primary fw-500">50MB</span>
+							<br>
+                            <span class="color-primary fw-500">50MB</span>
                             </p>
                         </div>
 
@@ -469,33 +476,35 @@
                             </div>
                         </div>
                         <div class="package-description">
-                            <p style="color: #8BC34A;">
-                                Chỉ 1 TK Facebook </p>
+                            <p style="color: #ff7000;">1 TK Facebook </p>
                             <p>
                                 <div class="feature-title">Automation Functions</div>
                                 <div>
-                                    <span>Auto Rep Inbox</span>
-                                    <br />
-                                    <span style="color: #8BC34A;">Auto Rep Comment</span>
-                                    <br />
-                                    <span>Auto Chúc Mừng Sinh Nhật</span>
-                                    <br />
-                                    <span>Auto Kết Bạn</span>
-                                    <br />
-                                    <span>Auto Lọc Bạn</span>
-                                    <br />
-                                    <span>Auto Đăng Bài</span>
+                                    <span>Auto Interactive</span>
+									<br>
+									<span style="color: #ff7000;">Auto Rep Inbox</span>
+                                    <br>
+                                    <span style="color: #ff7000;">Auto Rep Comment</span>
+                                    <br>
+                                    <span>Auto Birthday Post</span>
+                                    <br>
+                                    <span>Auto Add Friend</span>
+                                    <br>
+                                    <span style="color: #ff7000;">Auto Check Friend</span>
+                                    <br>
+                                    <span>Schedule Post</span>
                                 </div>
                             <p></p>
+							 <br>
 							 <span>Affiliate</span>
 							 <br>
 							  <span>Coupon</span>
 							  </p>
-                            <p><span style="color: #8BC34A;" class="">Hỗ trợ Lưu Trữ Tài Nguyên</span>
+                            <p><span style="color: #ff7000;" class="">Bộ Nhớ Lưu Trữ Tài Nguyên</span>
 							<br>
-                            <span style="color: #8BC34A;">Bộ nhớ:
+							<br>
                                 <span class="color-primary fw-500">
-													250MB												</span>
+													500MB												</span>
                             </p>
                         </div>
                         <!-- Plan Button  -->
@@ -513,37 +522,39 @@
                             <h5>Starter</h5>
                             <div class="ca-price d-flex justify-content-center">
                                 <span>VND</span>
-                                <h4>555K/th</h4>
+                                <h4>499K/th</h4>
                             </div>
                         </div>
                         <div class="package-description">
-                            <p style="color: #8BC34A;">
-                                3 TK Facebook </p>
+                            <p style="color: #ff7000;">
+                                Lên đến 3 TK Facebook </p>
                             <p>
                                 <div class="feature-title">Automation Functions</div>
                                 <div>
-                                    <span>Auto Rep Inbox</span>
-                                    <br />
-                                    <span style="color: #8BC34A;">Auto Rep Comment</span>
-                                    <br />
-                                    <span>Auto Chúc Mừng Sinh Nhật</span>
-                                    <br />
-                                    <span>Auto Kết Bạn</span>
-                                    <br />
-                                    <span>Auto Lọc Bạn</span>
-                                    <br />
-                                    <span>Auto Đăng Bài</span>
+                                    <span>Auto Interactive</span>
+									<br>
+									<span style="color: #ff7000;">Auto Rep Inbox</span>
+                                    <br>
+                                    <span style="color: #ff7000;">Auto Rep Comment</span>
+                                    <br>
+                                    <span>Auto Birthday Post</span>
+                                    <br>
+                                    <span>Auto Add Friend</span>
+                                    <br>
+                                    <span style="color: #ff7000;">Auto Check Friend</span>
+                                    <br>
+                                    <span>Schedule Post</span>
                                 </div>
                             <p></p>
+							 <br>
 							 <span>Affiliate</span>
 							 <br>
 							  <span>Coupon</span>
 							  </p>
-                            <p><span style="color: #8BC34A;" class="">Hỗ trợ Lưu Trữ Tài Nguyên</span>
+                            <p><span style="color: #ff7000;" class="">Bộ Nhớ Lưu Trữ Tài Nguyên</span>
 							<br>
-                            <span style="color: #8BC34A;">Bộ nhớ:
-                                <span class="color-primary fw-500">
-													250MB												</span>
+                            <br>
+                                <span class="color-primary fw-500">3GB</span>
                             </p>
                         </div>
                         <!-- Plan Button  -->
@@ -561,37 +572,39 @@
                             <h5>Business</h5>
                             <div class="ca-price d-flex justify-content-center">
                                 <span>VND</span>
-                                <h4>999K/th</h4>
+                                <h4>888K/th</h4>
                             </div>
                         </div>
                         <div class="package-description">
-                            <p style="color: #8BC34A;">
+                            <p style="color: #ff7000;">
                                 6 TK Facebook </p>
                             <p>
                                 <div class="feature-title">Automation Functions</div>
                                 <div>
-                                    <span>Auto Rep Inbox</span>
-                                    <br />
-                                    <span style="color: #8BC34A;">Auto Rep Comment</span>
-                                    <br />
-                                    <span>Auto Chúc Mừng Sinh Nhật</span>
-                                    <br />
-                                    <span>Auto Kết Bạn</span>
-                                    <br />
-                                    <span>Auto Lọc Bạn</span>
-                                    <br />
-                                    <span>Auto Đăng Bài</span>
+                                    <span>Auto Interactive</span>
+									<br>
+									<span style="color: #ff7000;">Auto Rep Inbox</span>
+                                    <br>
+                                    <span style="color: #ff7000;">Auto Rep Comment</span>
+                                    <br>
+                                    <span>Auto Birthday Post</span>
+                                    <br>
+                                    <span>Auto Add Friend</span>
+                                    <br>
+                                    <span style="color: #ff7000;">Auto Check Friend</span>
+                                    <br>
+                                    <span>Schedule Post</span>
                                 </div>
                             <p></p>
+							 <br>
 							 <span>Affiliate</span>
 							 <br>
 							  <span>Coupon</span>
 							  </p>
-                            <p><span style="color: #8BC34A;" class="">Hỗ trợ Lưu Trữ Tài Nguyên</span>
+                            <p><span style="color: #ff7000;" class="">Bộ Nhớ Lưu Trữ Tài Nguyên</span>
 							<br>
-                            <span style="color: #8BC34A;">Bộ nhớ:
-                                <span class="color-primary fw-500">
-													500MB												</span>
+							<br>
+                                <span class="color-primary fw-500">10GB</span>
                             </p>
                         </div>
                         <!-- Plan Button  -->
@@ -609,50 +622,44 @@
                             <h5>Retailer</h5>
                             <div class="ca-price d-flex justify-content-center">
                                 <span>VND</span>
-                                <h4>567K/th</h4>
+                                <h4>1369K/th</h4>
                             </div>
                         </div>
                         <div class="package-description">
-                            <p style="color: #8BC34A;">
-                                9 TK Facebook </p>
+                            <p style="color: #ff7000;">
+                                Lên đến 9 TK Facebook </p>
                             <p>
                                 <div class="feature-title">Automation Functions</div>
                                 <div>
-                                    <span>Auto Rep Inbox</span>
-                                    <br />
-                                    <span style="color: #8BC34A;">Auto Rep Comment</span>
-                                    <br />
-                                    <span>Auto Chúc Mừng Sinh Nhật</span>
-                                    <br />
-                                    <span>Auto Kết Bạn</span>
-                                    <br />
-                                    <span>Auto Lọc Bạn</span>
-                                    <br />
-                                    <span>Auto Đăng Bài</span>
+                                    <span>Auto Interactive</span>
+									<br>
+									<span style="color: #ff7000;">Auto Rep Inbox</span>
+                                    <br>
+                                    <span style="color: #ff7000;">Auto Rep Comment</span>
+                                    <br>
+                                    <span>Auto Birthday Post</span>
+                                    <br>
+                                    <span>Auto Add Friend</span>
+                                    <br>
+                                    <span style="color: #ff7000;">Auto Check Friend</span>
+                                    <br>
+                                    <span>Schedule Post</span>
                                 </div>
                             <p></p>
+							<br>
 							 <span>Affiliate</span>
 							 <br>
 							  <span>Coupon</span>
 							  </p>
-                            <p><span style="color: #8BC34A;" class="">Hỗ trợ Lưu Trữ Tài Nguyên</span>
+                            <p><span style="color: #ff7000;" class="">Bộ Nhớ Lưu Trữ Tài Nguyên</span>
 							<br>
-                            <span style="color: #8BC34A;">Bộ nhớ:
-                                <span class="color-primary fw-500">
-													2GB												</span>
+							<br>
+                                <span style="color: #ff7000;">30GB</span>
                             </p>
                         </div>
                         <!-- Plan Button  -->
                         <div class="plan-button">
                             <a href="signupe41c.html?package=2" class="button button--dark button--oval">CHỌN</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-3 fix-bang-gia" style="max-width: 20%;">
-                        <!-- Plan Button  -->
-                        <div class="plan-button">
-                            <a href="signupff96.html?package=9" class="button button--dark button--oval">Purchase</a>
                         </div>
                     </div>
                 </div>
@@ -695,7 +702,7 @@
                                 <i class="fa fa-quote-left" aria-hidden="true"></i>
                             </div>
                             <div class="client-description text-center">
-                                <p>“ Facebook Profile Marketing còn là một sân chơi mới mẻ với tôi, nhưng nhờ có ONEBIT cũng như những khóa học và tài liệu tuyệt vời về FB của ONEBIT đã giúp tôi tự tin hơn khi tham chiến thị trường đầy tiềm năng này. ”</p>
+                                <p>“ Marketing Facebook Profile còn là một sân chơi mới mẻ với tôi, nhưng nhờ có ONEBIT cũng như những khóa học và tài liệu tuyệt vời về FB của ONEBIT đã giúp tôi tự tin hơn khi tham chiến thị trường đầy tiềm năng này. ”</p>
                             </div>
                             <div class="star-icon text-center">
                                 <i class="ion-ios-star"></i>
@@ -715,7 +722,7 @@
                                 <i class="fa fa-quote-left" aria-hidden="true"></i>
                             </div>
                             <div class="client-description text-center">
-                                <p>“ Mười điểm cho những công cụ này của ONEBIT Marketing. Automation không phải là lười, mà sẽ giúp doanh nghiệp tiết kiệm chi phí nhân lực và tăng năng suất làm việc của nhân viên. ”</p>
+                                <p>“ Mười điểm cho những công cụ này của ONEBIT. Automation không phải là lười, mà sẽ giúp doanh nghiệp tiết kiệm chi phí nhân lực và tăng năng suất làm việc của nhân viên. ”</p>
                             </div>
                             <div class="star-icon text-center">
                                 <i class="ion-ios-star"></i>
@@ -898,13 +905,13 @@
                         <div class="line-shape"></div>
                     </div>
                     <div class="footer-text">
-                        <p>Bạn sẽ nhận được các thông tin về khóa học, tài liệu Instagram Marketing độc quyền từ chúng tôi. Đừng ngần ngại và hãy liên hệ chúng tôi ngay nhé!</p>
+                        <p>Bạn sẽ nhận được các thông tin về khóa học, tài liệu Marketing Facebook Profile độc quyền từ chúng tôi. Đừng ngần ngại và hãy liên hệ chúng tôi ngay nhé!</p>
                     </div>
                     <div class="address-text">
                         <p><span>Địa chỉ: </span>234, Trường Chinh, Hà Nội</p>
                     </div>
                     <div class="phone-text">
-                        <p><span>Điện thoại: </span><a href='tel:+84964115288'>0964-115-288</a></p>
+                        <p><span>Điện thoại: </span><a href='tel:+84978054513'>0978054513</a></p>
                     </div>
                     <div class="email-text">
                         <p><span>Email: </span><a href='mailto:cskh@autofbmkt.com'>cskh@autofbmkt.com</a></p>
@@ -983,10 +990,10 @@
         </div>
         <!-- Foooter Text-->
         <div class="copyright-text">
-            <p>ONEBIT &copy; Copyright 2018. Powered by <a href="https://www.xn--si-5ja.com/" target="_blank">Profile Marketing</a></p>
-            <a href="http://www.dmca.com/Protection/Status.aspx?ID=0eeb7943-de51-4bd4-ad34-50820e51b66d" title="DMCA.com Protection Status" class="dmca-badge"> <img src="../images.dmca.com/Badges/dmca_protected_16_120d929.png?ID=0eeb7943-de51-4bd4-ad34-50820e51b66d" alt="DMCA.com Protection Status"></a>
-            <script src="../images.dmca.com/Badges/DMCABadgeHelper.min.zip">
-            </script>
+            <p>ONEBIT &copy; Copyright 2018. Powered by <a href="http://autofbmkt.com/" target="_blank">Marketing Facebook Profile</a></p>
+            
+			
+            
         </div>
     </footer>
     <!-- ***** Footer Area Start ***** -->
