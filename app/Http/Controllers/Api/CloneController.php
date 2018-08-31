@@ -12,16 +12,24 @@ class CloneController extends Controller
     public function index()
     {
         $clone = Clon3::orderBy('updated_at', 'ASC')->first();
-        $clone->touch();
+		
+		if($clone){
+			$clone->touch();
+		}
 
         if( empty($clone->ip) && empty($clone->port) ){
-            $proxy = Proxy::orderBy('updated_at', 'ASC')->first();
-            $proxy->touch();
+            $proxy = Proxy::orderBy('updated_at', 'ASC')
+					->where('status', 1)
+					->first();
+					
+			if($proxy){
+				$proxy->touch();
 
-            $clone->update([
-                'ip' => trim($proxy->ip),
-                'port' => trim($proxy->port)
-            ]);
+				$clone->update([
+					'ip' => trim($proxy->ip),
+					'port' => trim($proxy->port)
+				]);
+			}	
         }
         
         return $clone;
