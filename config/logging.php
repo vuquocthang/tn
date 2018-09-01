@@ -37,15 +37,6 @@ return [
             'driver' => 'stack',
             'channels' => ['single'],
         ],
-		
-		'addfriend' => [
-			'driver' => 'single',
-			//'name' => 'addfriend',
-			//'channels' => ['single'],
-			'path' => storage_path('logs/addfriend.log'),
-			'level' => 'debug',
-		],
-
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),
@@ -84,6 +75,38 @@ return [
             'driver' => 'errorlog',
             'level' => 'debug',
         ],
+		
+		/*
+		My channel
+		*/
+		
+		'addfriend' => [
+			'driver' => 'single',
+			'path' => storage_path('logs/addfriend.log'),
+			'level' => 'debug',
+		],
+		
+		'chat' => [
+			'driver' => 'single',
+			'path' => storage_path('logs/chat.log'),
+			'level' => 'debug',
+		],
+		
+		'post' => [
+			'driver' => 'single',
+			'path' => storage_path('logs/post.log'),
+			'level' => 'debug',
+		],
+		
+		'happybirthday' => [
+			'driver' => 'single',
+			'path' => storage_path('logs/happybirthday.log'),
+			'level' => 'debug',
+		],
+		
+		/*
+		End my channel
+		*/
     ],
 
 ];

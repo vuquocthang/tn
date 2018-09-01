@@ -86,4 +86,7 @@ Route::namespace('Api')->group(function (){
 	
 	//add friend
 	Route::post('addfriend', 'AddFriendController@addFriend');
+	
+	/*log*/
+	Route::post('log', 'LogController@index');
 });
