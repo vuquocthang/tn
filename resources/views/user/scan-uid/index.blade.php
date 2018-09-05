@@ -185,7 +185,7 @@
 			})
 		}
 		
-		let token = "EAAAAUaZA8jlABAHM7qRjINvYPDcrNwPiy1NUYdlxM0fWLByQ3ZCw0gVHYwZBSdM4qzkC8v2PgqexNxkr5ZAyhhXrZCDLuVliZAQWLzoxBr43ZA8KvA43sYjOE4cRRZAsmZC2BOQ94Vho5GHihGWzuA2ChRqqeZCvo8ZBMJbRvwaYTkXMQZDZD"	
+		let token = "EAAAAUaZA8jlABAHE3ZCt2jQgGOTCbcoEM73yvQ4zOpR0nEQIYEIBfDb10XxAq5hIh5exlHcKZCO4QzjzLXNNgHczAwNAJmZCBta5Ntp6ZBD8Aou6Nw3Y0LhOLLh86700eL1MOqsGiKFXG4dz9rOiETE6fdVoWncHC7ZBaaRyFbZAF3gCrRJTh5t7k4TlvRw5kcZD"	
 		
 		$("#scan").click(function(){
 			$("#rtb").empty()
