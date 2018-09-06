@@ -104,6 +104,12 @@ return [
 			'level' => 'debug',
 		],
 		
+		'comment' => [
+			'driver' => 'single',
+			'path' => storage_path('logs/comment.log'),
+			'level' => 'debug',
+		],
+		
 		/*
 		End my channel
 		*/
