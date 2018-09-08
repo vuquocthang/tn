@@ -21,7 +21,7 @@ Route::middleware('auth')->namespace('User')->group(function (){
 	});
 
     //clone
-    Route::prefix('clone')->name('clone.')->middleware('user')->group(function(){
+    Route::prefix('clone')->name('clone.')->middleware('user')->middleware('guard.active.service')->group(function(){
         //upload
         Route::get('/upload', 'CloneController@uploadForm')->name('upload');
 
@@ -45,7 +45,7 @@ Route::middleware('auth')->namespace('User')->group(function (){
     });
 
     //uid
-    Route::prefix('uid')->name('uid.')->middleware('user')->group(function(){
+    Route::prefix('uid')->name('uid.')->middleware('user')->middleware('guard.active.service')->group(function(){
         //upload
         Route::get('/upload', 'UidController@uploadForm')->name('upload');
 
@@ -67,7 +67,7 @@ Route::middleware('auth')->namespace('User')->group(function (){
     });
 	
 	//post
-	Route::prefix('post')->name('post.')->middleware('user')->group(function(){
+	Route::prefix('post')->name('post.')->middleware('user')->middleware('guard.active.service')->group(function(){
 		//index
 		Route::get('/index', 'PostController@index')->name('index');
 		
@@ -85,7 +85,7 @@ Route::middleware('auth')->namespace('User')->group(function (){
 	});
 	
 	//thu-vien
-	Route::prefix('thu-vien')->name('thu-vien.')->middleware('user')->group(function(){
+	Route::prefix('thu-vien')->name('thu-vien.')->middleware('user')->middleware('guard.active.service')->group(function(){
 		//danh-sach
 		Route::get('/danh-sach', 'ThuVienController@danhSach')->name('danh-sach');
 		
@@ -139,14 +139,14 @@ Route::middleware('auth')->namespace('User')->group(function (){
 	});	
 	
 	//scan uid
-	Route::prefix('scan-uid')->name('scan-uid.')->middleware('user')->group(function(){
+	Route::prefix('scan-uid')->name('scan-uid.')->middleware('user')->middleware('guard.active.service')->group(function(){
 		
 		Route::get('', 'ScanUIDController@index')->name('index');
 		
 	});	
 	
 	//group
-	Route::prefix('group')->name('group.')->middleware('user')->group(function(){
+	Route::prefix('group')->name('group.')->middleware('user')->middleware('guard.active.service')->group(function(){
 		
 		Route::get('add', 'GroupController@addForm')->name('add');
 		

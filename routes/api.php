@@ -108,7 +108,7 @@ Route::namespace('Api')->middleware('guard.api')->group(function (){
 						'service_type' => $tran->type
 					]);
 					
-					return "Giao dịch ". $tran->txn_id . "thành công";
+					return "Giao dịch ". $tran->txn_id . " thành công";
 				}
 			}
 		}
