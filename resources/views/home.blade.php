@@ -59,7 +59,14 @@
                 <!-- Signup btn -->
                 <div class="col-12 col-lg-2">
                     <div class="sing-up-button d-none d-lg-block">
-                        <a href="{{ url('login') }}">Đăng Nhập</a>
+						@auth("web")
+							<a href="{{ url('dashboard') }}">Đăng Nhập</a>
+						@endauth
+						
+						@guest
+							<a href="{{ url('login') }}">Đăng Nhập</a>
+						@endguest
+                        
                     </div>
                 </div>
             </div>
