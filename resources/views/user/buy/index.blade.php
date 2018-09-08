@@ -30,17 +30,17 @@ tr:nth-child(even) {
     <th>Nội Dung</th>
   </tr>
   <tr>
-    <td></td>
+    <td>Tên Tài Khoản : DAO HAI YEN</td>
     <td>{{ number_format($price) }} đ</td>
     <td>{{ strtoupper($txnId) }}</td>
   </tr>
   <tr>
-    <td></td>
+    <td>Số Tài Khoản : 0451001813899</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
-    <td></td>
+    <td>Ngân Hàng : Vietcombank</td>
     <td></td>
     <td></td>
   </tr>
