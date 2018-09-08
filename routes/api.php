@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::namespace('Api')->group(function (){
+Route::namespace('Api')->middleware('guard.api')->group(function (){
     Route::get('proxy', 'ProxyController@index');
 	
 	Route::get('proxies', function(){

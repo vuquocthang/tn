@@ -210,5 +210,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+	
+	'api_key' => env('API_KEY'),
 
 ];
