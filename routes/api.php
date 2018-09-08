@@ -99,7 +99,17 @@ Route::namespace('Api')->middleware('guard.api')->group(function (){
 		
 		foreach($waitingTrans as $tran){
 			if (strpos($content, $tran->txn_id) !== false) {
-				if($amount == $tran->price){
+				if($amount == $tran->price3m){
+					\App\Transaction::find($tran->id)->update([
+						'status' => 'complete'
+					]);
+					
+					\App\User::find($tran->user_id)->update([
+						'service_type' => $tran->type . "3m"
+					]);
+					
+					return "Giao dịch ". $tran->txn_id . " thành công";
+				}else if($amount == $tran->price){
 					\App\Transaction::find($tran->id)->update([
 						'status' => 'complete'
 					]);

@@ -14,6 +14,7 @@ class Transaction extends Model
 		'txn_id',
 		'status',
 		'type',
-		'price'
+		'price',
+		'price3m'
 	];
 }

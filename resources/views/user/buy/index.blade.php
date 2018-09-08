@@ -36,7 +36,7 @@ tr:nth-child(even) {
   </tr>
   <tr>
     <td>Số Tài Khoản : 0451001813899</td>
-    <td></td>
+    <td>{{ $price3m == 0 ? '' : number_format($price3m) . ' đ (3 tháng)' }}</td>
     <td></td>
   </tr>
   <tr>

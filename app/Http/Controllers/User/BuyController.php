@@ -21,6 +21,7 @@ class BuyController extends Controller
 		$user = $request->user();
 		$type = $request->input('type');
 		$price = 0;
+		$price3m = 0;
 		
 		$tran = Transaction::where('user_id', $user->id)
 					->where('type', $type)
@@ -29,6 +30,7 @@ class BuyController extends Controller
 
 		if($tran){
 			$price = $tran->price;
+			$price3m = $tran->price3m;
 			$txnId = $tran->txn_id;
 			
 		}else{
@@ -43,17 +45,18 @@ class BuyController extends Controller
 			
 			switch($type) {
 				case "Trial" : $price = 29000; break; 
-				case "Beginner" : $price = 199000; break; 
-				case "Starter" : $price = 537000; break; 
-				case "Business" : $price = 894000; break; 
+				case "Beginner" : $price = 199000; $price3m = 497000; break; 
+				case "Starter" : $price = 537000; $price3m = 1197000; break; 
+				case "Business" : $price = 894000; $price3m = 1697000; break; 
 				default : $price = 29000; break; 
 			}
 			
 			$tran->price = $price;
+			$tran->price3m = $price3m;
 			$tran->save();
 		}
 		
-        return view('user.buy.index', compact('price', 'txnId'));
+        return view('user.buy.index', compact('price', 'txnId', 'price3m'));
     }
 	
 	function goRandomString($length = 10) {
