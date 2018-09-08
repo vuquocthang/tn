@@ -37,7 +37,7 @@
                     <div class="menu_area">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <!-- Logo -->
-                            <a class="navbar-brand" href="#"><img style="position: relative;height: 40px;bottom: 5px;" src="{{ asset('') }}/front/inc/themes/default/assets/img/logo.png"></a>
+                            <a class="navbar-brand" href="#"><img style="position: relative;height: 40px;bottom: 5px;" src="{{ asset('') }}/Onebitlogo.png"></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
