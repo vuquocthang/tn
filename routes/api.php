@@ -107,9 +107,13 @@ Route::namespace('Api')->middleware('guard.api')->group(function (){
 					\App\User::find($tran->user_id)->update([
 						'service_type' => $tran->type
 					]);
+					
+					return "Giao dịch ". $tran->txn_id . "thành công";
 				}
 			}
 		}
+		
+		return "Không giao dịch nào thành công";
 		
 	});
 	
