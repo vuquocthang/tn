@@ -60,7 +60,7 @@
                 <div class="col-12 col-lg-2">
                     <div class="sing-up-button d-none d-lg-block">
 						@auth("web")
-							<a href="{{ url('dashboard') }}">Đăng Nhập</a>
+							<a href="{{ url('dashboard') }}">Dashboard</a>
 						@endauth
 						
 						@guest
