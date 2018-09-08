@@ -62,5 +62,6 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\Admin::class,
         'user' => \App\Http\Middleware\User::class,
 		'guard.api' => \App\Http\Middleware\GuardApi::class,
+		'guard.active.service' => \App\Http\Middleware\CheckActiveService::class,
     ];
 }
