@@ -456,7 +456,7 @@
                         </div>
 
                         <div class="plan-button">
-                            <a href="signup.html" class="button button--dark button--oval">CHỌN</a>
+                            <a href="{{ route('buy.index') }}?type=Trial" class="button button--dark button--oval">CHỌN</a>
                         </div>
                     </div>
                 </div>
@@ -513,7 +513,7 @@
                         </div>
                         <!-- Plan Button  -->
                         <div class="plan-button">
-                            <a href="signupc4e2.html?package=1" class="button button--dark button--oval">CHỌN</a>
+                            <a href="{{ route('buy.index') }}?type=Beginner" class="button button--dark button--oval">CHỌN</a>
                         </div>
                     </div>
                 </div>
@@ -568,7 +568,7 @@
                         </div>
                         <!-- Plan Button  -->
                         <div class="plan-button">
-                            <a href="signupe41c.html?package=2" class="button button--dark button--oval">CHỌN</a>
+                            <a href="{{ route('buy.index') }}?type=Starter" class="button button--dark button--oval">CHỌN</a>
                         </div>
                     </div>
                 </div>
@@ -623,7 +623,7 @@
                         </div>
                         <!-- Plan Button  -->
                         <div class="plan-button">
-                            <a href="signupe41c.html?package=2" class="button button--dark button--oval">CHỌN</a>
+                            <a href="{{ route('buy.index') }}?type=Business" class="button button--dark button--oval">CHỌN</a>
                         </div>
                     </div>
                 </div>
@@ -678,7 +678,7 @@
                         </div>
                         <!-- Plan Button  -->
                         <div class="plan-button">
-                            <a href="signupe41c.html?package=2" class="button button--dark button--oval">CHỌN</a>
+                            <a href="#" class="button button--dark button--oval">CHỌN</a>
                         </div>
                     </div>
                 </div>

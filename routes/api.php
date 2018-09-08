@@ -89,4 +89,28 @@ Route::namespace('Api')->middleware('guard.api')->group(function (){
 	
 	/*log*/
 	Route::post('log', 'LogController@index');
+	
+	//accept transaction
+	Route::post('transaction/accept', function(Request $req){
+		$waitingTrans = \App\Transaction::where('status', 'waiting')->get();
+		
+		$amount = $req->amount;
+		$content = $req->content;
+		
+		foreach($waitingTrans as $tran){
+			if (strpos($content, $tran->txn_id) !== false) {
+				if($amount == $tran->price){
+					\App\Transaction::find($tran->id)->update([
+						'status' => 'complete'
+					]);
+					
+					\App\User::find($tran->user_id)->update([
+						'service_type' => $tran->type
+					]);
+				}
+			}
+		}
+		
+	});
+	
 });

@@ -154,6 +154,11 @@ Route::middleware('auth')->namespace('User')->group(function (){
 		
 		Route::get('index', 'GroupController@index')->name('index');
 	});	
+	
+	//mua tai khoan
+	Route::prefix('buy')->name('buy.')->group(function(){
+		Route::get('/', 'BuyController@index')->name('index');
+	});
 
 });
 

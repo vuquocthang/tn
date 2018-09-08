@@ -60,62 +60,65 @@
                                 </label>
                             </div>
                             <p class="login button">
-                                <input type="submit" value="Log In" class="btn btn-success" />
+                                <input type="submit" value="Đăng Nhập" class="btn btn-success" />
                             </p>
                             <p class="change_link">
-                                <a href="#toforgot" class="btn btn-responsive botton-alignment btn-warning btn-sm">Forgot password
+                                <a href="#toforgot" class="btn btn-responsive botton-alignment btn-warning btn-sm">Quên Mật Khẩu
                                 </a>
-                                <a href="#toregister" id="signup" class="btn btn-responsive botton-alignment btn-success btn-sm pull-right">Sign Up
+                                <a href="#toregister" id="signup" class="btn btn-responsive botton-alignment btn-success btn-sm pull-right">Đăng Ký
                                 </a>
                             </p>
                         </form>
                     </div>
                     <div id="register" class="animate form">
-                        <form action="index.html" id="register_here" autocomplete="on" method="post">
-                            <h3 class="black_bg">
+                        <form action="{{ route('register') }}" id="register_here" autocomplete="on" method="post">
+                            
+							@csrf
+							<h3 class="black_bg">
                                 <img src="{{ asset('HTML') }}/img/logo.png" alt="josh logo">
-                                <br>Sign Up</h3>
+                                <br>Đăng Ký</h3>
                             <div class="form-group">
                                 <label style="margin-bottom:0;" for="first_name" class="youmail">
-                                    <i class="livicon" data-name="user" data-size="16" data-loop="true" data-c="#3c8dbc" data-hc="#3c8dbc"></i> First Name
+                                    <i class="livicon" data-name="user" data-size="16" data-loop="true" data-c="#3c8dbc" data-hc="#3c8dbc"></i> Họ Tên
                                 </label>
-                                <input id="first_name" name="first_name" required type="text" placeholder="John" />
+                                <input id="first_name" name="name" required type="text" placeholder="John" required/>
                             </div>
-                            <div class="form-group">
-                                <label style="margin-bottom:0;" for="last_name" class="youmail">
-                                    <i class="livicon" data-name="user" data-size="16" data-loop="true" data-c="#3c8dbc" data-hc="#3c8dbc"></i> Last Name
-                                </label>
-                                <input id="last_name" name="last_name" required type="text" placeholder="Doe" />
-                            </div>
+                            
                             <div class="form-group">
                                 <label style="margin-bottom:0;" for="email" class="youmail">
                                     <i class="livicon" data-name="mail" data-size="16" data-loop="true" data-c="#3c8dbc" data-hc="#3c8dbc"></i> E-mail
                                 </label>
-                                <input id="email" name="email" placeholder="mysupermail@mail.com" />
+                                <input id="email" name="email" placeholder="mysupermail@mail.com" required/>
                             </div>
-                            <div class="form-group">
-                                <label style="margin-bottom:0;" for="email" class="youmail">
-                                    <i class="livicon" data-name="mail" data-size="16" data-loop="true" data-c="#3c8dbc" data-hc="#3c8dbc"></i> Confirm E-mail
-                                </label>
-                                <input id="email_confirm" name="email_confirm" placeholder="mysupermail@mail.com" />
-                            </div>
+                            
                             <div class="form-group">
                                 <label style="margin-bottom:0;" for="password" class="youpasswd">
-                                    <i class="livicon" data-name="key" data-size="16" data-loop="true" data-c="#3c8dbc" data-hc="#3c8dbc"></i> Password
+                                    <i class="livicon" data-name="key" data-size="16" data-loop="true" data-c="#3c8dbc" data-hc="#3c8dbc"></i> Mật Khẩu 
                                 </label>
-                                <input id="password1" name="password" required type="password" placeholder="Password" />
+                                <input id="password1" name="password" required type="password" placeholder="Password" required/>
                             </div>
                             <div class="form-group">
                                 <label style="margin-bottom:0;" for="password_confirm" class="youpasswd">
-                                    <i class="livicon" data-name="key" data-size="16" data-loop="true" data-c="#3c8dbc" data-hc="#3c8dbc"></i> Confirm Password
+                                    <i class="livicon" data-name="key" data-size="16" data-loop="true" data-c="#3c8dbc" data-hc="#3c8dbc"></i> Xác Nhận Mật Khẩu
                                 </label>
-                                <input id="password_confirm" name="password_confirm" required type="password" placeholder="Confirm password" />
+                                <input id="password_confirm" name="password_confirmation" required type="password" placeholder="Confirm password" required/>
                             </div>
+							
+							<div class="form-group ">
+                               <div class="col-sm-12">
+                                    @if ($errors->first())
+                                        <span class="invalid-feedback">
+                                        <strong>{{ $errors->first() }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+							
                             <p class="signin button">
-                                <input type="submit" class="btn btn-success" value="Sign Up" />
+                                <input type="submit" class="btn btn-success" value="Đăng Ký" />
                             </p>
                             <p class="change_link">
-                                <a href="#tologin" class="btn btn-responsive botton-alignment btn-warning btn-sm to_register">Back
+                                <a href="#tologin" class="btn btn-responsive botton-alignment btn-warning btn-sm to_register">Trở Lại
                                 </a>
                             </p>
                         </form>
