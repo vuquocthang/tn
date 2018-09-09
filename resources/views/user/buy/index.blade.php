@@ -31,12 +31,12 @@ tr:nth-child(even) {
   </tr>
   <tr>
     <td>Tên Tài Khoản : DAO HAI YEN</td>
-    <td>{{ number_format($price) }} đ</td>
+    <td>{{ number_format($price) }} đ/tháng</td>
     <td>{{ strtoupper($txnId) }}</td>
   </tr>
   <tr>
     <td>Số Tài Khoản : 0451001813899</td>
-    <td>{{ $price3m == 0 ? '' : number_format($price3m) . ' đ (3 tháng)' }}</td>
+    <td>{{ $price3m == 0 ? '' : 'Ưu đãi hôm nay : ' . number_format($price3m) . ' đ (3 tháng)' }}</td>
     <td></td>
   </tr>
   <tr>
