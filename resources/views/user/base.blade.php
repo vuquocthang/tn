@@ -780,6 +780,7 @@
                         </div>
                     </div>
                     <!-- To do list -->
+					{{--
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="panel panel-primary todolist">
                             <div class="panel-heading border-light">
@@ -985,10 +986,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
-                <div class="clearfix"></div>
-                <div class="row ">
+                
+				{{--
+				<div class="clearfix"></div>
+                
+				<div class="row ">
                     <div class="col-md-4 col-sm-12">
                         <div class="panel panel-danger">
                             <div class="panel-heading border-light">
@@ -1060,7 +1064,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </section>
         </aside>
         <!-- right-side -->
