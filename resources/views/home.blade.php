@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <meta name="theme-color" content="#fff">
     <!--Impt End-->
-    <meta property="og:image" content="inc/themes/default/assets/img/instavn.html" />
+    
     <title>ONEBIT - Marketing Facebook Profile</title>
     <meta name="description" content="Nền tảng Facebook Marketing Profile mạnh mẽ, tự động hóa công việc hằng ngày, làm việc mọi nơi, mọi thiết bị với hệ thống da nền tảng tiện dụng, Tiết kiệm thời gian, công cụ hữu ích">
     <meta name="keywords" content="facebook, facebook profile, marketing, công cụ, tự động, content, hack facebook, auto chatbot, auto nhắn tin, auto comment, auto bình luận, fb, lên lịch, marketing, việt nam, auto, hệ thống, nền tảng, khóa, học,">
     <script src="cdn-cgi/apps/head/KJhokXiE0tQ-KeUHKTfkKOXyWT8.js"></script>
-    <link rel="icon" href="{{ asset('') }}/front/assets/img/logomark.png" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ asset('') }}/front/assets/img/logomark.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{{ asset('') }}/front/assets/img/apple-icon-128.html">
+    <link rel="icon" href="{{ asset('') }}/Onebitlogo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('') }}/Onebitlogo.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('') }}/Onebitlogo.png">
     <!--CSS nhé-->
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
     <link href="{{ asset('') }}/front/inc/themes/default/assets-index/style.css" rel="stylesheet">
@@ -481,7 +481,7 @@
 
                 <!--Danh sách gói-->
 
-                <div class="col-12 col-md-6 col-lg-3 fix-bang-gia" style="max-width: 20%;">
+                <div class="col-12 col-md-6 col-lg-4 fix-bang-gia" style="max-width: 25%;">
                     <!-- Package Price  -->
                     <div class="single-price-plan active text-center">
                         <!-- Package Text  -->
@@ -526,7 +526,7 @@
 							 <span>3 tháng</span>
 							 <br>
 							  <span>VND</span>
-                                <h4>557K/th</h4>
+                                <h4>557K</h4>
 							  </p>
                         </div>
                         <!-- Plan Button  -->
@@ -536,7 +536,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-3 fix-bang-gia" style="max-width: 20%;">
+                <div class="col-12 col-md-6 col-lg-4 fix-bang-gia" style="max-width: 25%;">
                     <!-- Package Price  -->
                     <div class="single-price-plan active text-center">
                         <!-- Package Text  -->
@@ -581,7 +581,7 @@
 							 <span>3 tháng</span>
 							 <br>
 							  <span>VND</span>
-                                <h4>1197K/th</h4>
+                                <h4>1197K</h4>
 							  </p>
                         </div>
                         <!-- Plan Button  -->
@@ -591,7 +591,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-3 fix-bang-gia" style="max-width: 20%;">
+                <div class="col-12 col-md-6 col-lg-4 fix-bang-gia" style="max-width: 25%;">
                     <!-- Package Price  -->
                     <div class="single-price-plan active text-center">
                         <!-- Package Text  -->
@@ -636,7 +636,7 @@
 							 <span>3 tháng</span>
 							 <br>
 							  <span>VND</span>
-                                <h4>1697K/th</h4>
+                                <h4>1697K</h4>
 							  </p>
                         </div>
                         <!-- Plan Button  -->
@@ -646,7 +646,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-3 fix-bang-gia" style="max-width: 20%;">
+                <div class="col-12 col-md-6 col-lg-4 fix-bang-gia" style="max-width: 25%;">
                     <!-- Package Price  -->
                     <div class="single-price-plan active text-center">
                         <!-- Package Text  -->
@@ -811,9 +811,7 @@
         <!-- Foooter Text-->
         <div class="copyright-text">
             <p>ONEBIT &copy; Copyright 2018. Powered by <a href="http://autofbmkt.com/" target="_blank">Marketing Facebook Profile</a></p>
-            <a href="http://www.dmca.com/Protection/Status.aspx?ID=0eeb7943-de51-4bd4-ad34-50820e51b66d" title="DMCA.com Protection Status" class="dmca-badge"> <img src="../images.dmca.com/Badges/dmca_protected_16_120d929.png?ID=0eeb7943-de51-4bd4-ad34-50820e51b66d" alt="DMCA.com Protection Status"></a>
-            <script src="../images.dmca.com/Badges/DMCABadgeHelper.min.zip">
-            </script>
+            
         </div>
     </footer>
     <!-- ***** Footer Area Start ***** -->

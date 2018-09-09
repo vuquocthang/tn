@@ -238,7 +238,7 @@ p {
 
 .section-heading > h2 {
     font-weight: 300;
-    color: #00BCD4;
+    color: #ff7000;
     font-size: 48px;
     margin: 0;
 }
@@ -290,7 +290,7 @@ p {
     -webkit-animation: 2000ms linear 0s normal none infinite running colorlib-load;
     animation: 2000ms linear 0s normal none infinite running colorlib-load;
     background: transparent none repeat scroll 0 0;
-    border-color: #dddddd #dddddd #00BCD4;
+    border-color: #dddddd #dddddd #ff7000;
     border-radius: 50%;
     border-style: solid;
     border-width: 2px;
@@ -393,7 +393,7 @@ p {
 
 .sing-up-button > a:hover {
     background: #fff;
-    color: #00BCD4;
+    color: #ff7000;
     border-color: transparent;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -403,7 +403,7 @@ p {
 /* stcicky css */
 
 .header_area.sticky {
-    background-color: #00BCD4;
+    background-color: #ff7000;
     -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     height: 70px;
@@ -429,7 +429,7 @@ p {
 -------------------------- */
 
 .wellcome_area {
-    background-image: url(img/bg-img/welcome-bg.png);
+    background-image: url(http://www.dreamtemplate.com/dreamcodes/bg_images/color/c17.jpg);
     height: 900px;
     position: relative;
     z-index: 1;
@@ -561,7 +561,7 @@ p {
 
 .single-special > h4 {
     font-size: 22px;
-    color: #00BCD4;
+    color: #ff7000;
     margin-bottom: 15px;
 }
 
@@ -576,7 +576,7 @@ p {
 }
 
 .special_description_content > h2 {
-    color: #00BCD4;
+    color: #ff7000;
     font-size: 48px;
     margin-bottom: 30px;
 }
@@ -622,7 +622,7 @@ p {
 .app-download-btn.active a,
 .app-download-btn a:hover {
     border-color: transparent;
-    background-color: #00BCD4;
+    background-color: #ff7000;
 }
 
 .app-download-btn a i {
@@ -680,7 +680,7 @@ p {
 
 .single-feature > h5 {
     font-size: 22px;
-    color: #00BCD4;
+    color: #ff7000;
 }
 
 .single-feature > p {
@@ -719,7 +719,7 @@ p {
 .video-area .video-play-btn a {
     width: 80px;
     height: 80px;
-    background-color: #00BCD4;
+    background-color: #ff7000;
     color: #fff;
     text-align: center;
     display: block;
@@ -748,12 +748,12 @@ p {
 .cool_facts_area {
     position: relative;
     z-index: auto;
-    background: #00BCD4 !important;
-    background: -webkit-linear-gradient(to left, #7873ed, #00BCD4);
-    background: -webkit-linear-gradient(right, #7873ed, #00BCD4);
-    background: -webkit-gradient(linear, right top, left top, from(#7873ed), to(#00BCD4));
-    background: -o-linear-gradient(right, #7873ed, #00BCD4);
-    background: linear-gradient(to left, #7873ed, #00BCD4);
+    background: #ff7000 !important;
+    background: -webkit-linear-gradient(to left, #7873ed, #ff7000);
+    background: -webkit-linear-gradient(right, #7873ed, #ff7000);
+    background: -webkit-gradient(linear, right top, left top, from(#7873ed), to(#ff7000));
+    background: -o-linear-gradient(right, #7873ed, #ff7000);
+    background: linear-gradient(to left, #7873ed, #ff7000);
     padding: 180px 0 80px 0;
     top: -100px;
 }
@@ -906,7 +906,7 @@ p {
 .single-price-plan.active .package-plan,
 .single-price-plan.active .plan-button > a,
 .single-price-plan:hover .plan-button > a {
-    background-color: #00BCD4;
+    background-color: #ff7000;
 }
 
 .single-price-plan.active .package-plan .ca-price > h4,
@@ -921,7 +921,7 @@ p {
 -------------------------- */
 
 .clients-feedback-area .client-name > h5 {
-    color: #00BCD4;
+    color: #ff7000;
     font-size: 22px;
     margin-top: 5px;
 }
@@ -940,7 +940,7 @@ p {
 
 .clients-feedback-area .client > i {
     font-size: 48px;
-    color: #00BCD4;
+    color: #ff7000;
     margin-bottom: 30px;
 }
 
@@ -964,7 +964,7 @@ p {
     width: 12px;
     height: 12px;
     text-indent: -999999999999999999999999px;
-    border: 3px solid #00BCD4;
+    border: 3px solid #ff7000;
     background-color: #fff;
     border-radius: 50%;
     margin: 5.5px;
@@ -972,8 +972,8 @@ p {
 }
 
 .clients-feedback-area .slick-dots li.slick-active button {
-    background-color: #00BCD4;
-    border-color: #00BCD4;
+    background-color: #ff7000;
+    border-color: #ff7000;
 }
 
 .clients-feedback-area .slick-slide.client-thumbnail {
@@ -1034,12 +1034,12 @@ p {
 -------------------------- */
 
 .our-monthly-membership {
-    background: #00BCD4 !important;
-    background: -webkit-linear-gradient(to left, #7873ed, #00BCD4);
-    background: -webkit-linear-gradient(right, #7873ed, #00BCD4);
-    background: -webkit-gradient(linear, right top, left top, from(#7873ed), to(#00BCD4));
-    background: -o-linear-gradient(right, #7873ed, #00BCD4);
-    background: linear-gradient(to left, #7873ed, #00BCD4);
+    background: #ff7000 !important;
+    background: -webkit-linear-gradient(to left, #7873ed, #ff7000);
+    background: -webkit-linear-gradient(right, #7873ed, #ff7000);
+    background: -webkit-gradient(linear, right top, left top, from(#7873ed), to(#ff7000));
+    background: -o-linear-gradient(right, #7873ed, #ff7000);
+    background: linear-gradient(to left, #7873ed, #ff7000);
 }
 
 .membership-description > h2 {
@@ -1059,7 +1059,7 @@ p {
     display: inline-block;
     text-align: center;
     line-height: 45px;
-    color: #00BCD4;
+    color: #ff7000;
     font-weight: 500;
     border-radius: 23px 23px 23px 0;
 }
@@ -1093,7 +1093,7 @@ p {
 
 .member-text > h4 {
     font-size: 22px;
-    color: #00BCD4;
+    color: #ff7000;
 }
 
 .member-text > p {
@@ -1170,7 +1170,7 @@ p {
 .address-text > p > span,
 .phone-text > p > span,
 .email-text > p > span {
-    color: #00BCD4;
+    color: #ff7000;
 }
 
 .footer-contact-area .line-shape {
@@ -1202,7 +1202,7 @@ p {
 }
 
 .btn.submit-btn {
-    background: #00BCD4;
+    background: #ff7000;
     height: 48px;
     min-width: 185px;
     color: #ffffff;
@@ -1237,7 +1237,7 @@ p {
 }
 
 .footer-social-icon > a > i {
-    background: #00BCD4;
+    background: #ff7000;
     font-size: 14px;
     color: #ffffff;
     height: 40px;
