@@ -49,9 +49,18 @@
                                     <li class="nav-item"><a class="nav-link" href="#" target="_blank">Hỗ Trợ</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#" target="_blank">Kiến Thức FB MKT</a></li>
                                 </ul>
+								
+								@guest
                                 <div class="sing-up-button d-lg-none">
-                                    <a href="login.html">Đăng Nhập</a>
+                                    <a href="{{ url('login') }}">Đăng Nhập</a>
                                 </div>
+								@endguest
+								
+								@auth("web")
+								<div class="sing-up-button d-lg-none">
+                                    <a href="{{ url('dashboard') }}">Dashboard</a>
+                                </div>
+								@endauth
                             </div>
                         </nav>
                     </div>
@@ -85,7 +94,7 @@
                     </div>
                     <div class="get-start-area">
                         <!-- Form Start -->
-                        <form action="http://autofbmkt.com/login" method="post" class="form-inline">
+                        <form action="http://autofbmkt.com/login" method="get" class="form-inline">
                             <span class="trial">                      </span>
                             <input type="submit" class="submit" value="ĐĂNG KÝ NGAY">
                         </form>
