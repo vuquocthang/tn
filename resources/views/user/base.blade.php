@@ -430,6 +430,7 @@
 						<!-- End Scan UID -->
 						
 						<!-- Group -->
+						{{--
 						<li class="{{ \Request::route()->getName() == 'group.index' ? 'active' : '' }}">
                             <a href="{{ route('group.index') }}">
                                 <i class="fa fa-clock-o"></i>
@@ -450,6 +451,7 @@
                                 </li>
                             </ul>
                         </li>
+						--}}
 						<!-- End Group -->
 
                         @else
