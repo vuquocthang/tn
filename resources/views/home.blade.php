@@ -89,8 +89,8 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-md">
                     <div class="wellcome-heading">
-                        <h2 style="line-height: 0.5 !important;"><span style="font-family:  Monoton, cursive; font-weight:  400;font-size: 120px;">ONEBIT Ver 2</span></h2>
-                        <br><br><p>Khám phá phiên bản mới cùng nhiều chức năng mạnh mẽ được tích hợp</p>
+                        <h2 style="line-height: 0.5 !important;"><span style="font-family:  Monoton, cursive; font-weight:  400;font-size: 120px;">ONEBIT </span>Ver 2</h2>
+                        <br><br><h1>Khám phá phiên bản mới cùng nhiều chức năng mạnh mẽ được tích hợp</h1>
                     </div>
                     <div class="get-start-area">
                         <!-- Form Start -->
