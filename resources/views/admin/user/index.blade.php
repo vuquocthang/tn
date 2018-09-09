@@ -71,6 +71,7 @@
 											<input type="hidden" name="user_id" value="{{ $user->id }}" />
 											
 											<select name="service_type" onchange="$('#usrActive').submit()" >
+												<option value="" >Chọn Gói</option>
 												<option value="Trial" {{ $user->service_type == 'Trial' ? 'selected' : '' }}>Trial</option>
 												<option value="Beginner" {{ $user->service_type == 'Beginner' ? 'selected' : '' }}>Beginner</option>
 												<option value="Starter" {{ $user->service_type == 'Starter' ? 'selected' : '' }}>Starter</option>
