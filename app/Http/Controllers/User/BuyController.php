@@ -39,7 +39,7 @@ class BuyController extends Controller
 				'type' => $type
 			]);
 			
-			$txnId = "TXN-" . $tran->id;
+			$txnId = "ONEBIT" . $tran->id;
 			$tran->txn_id = $txnId;
 			
 			

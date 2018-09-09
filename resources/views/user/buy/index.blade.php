@@ -45,7 +45,7 @@ tr:nth-child(even) {
     <td></td>
   </tr>
   
-  <p>Lưu ý: Bạn cần chuyển đúng số tiền (không thừa không thiếu) và ghi chính xác nội dung chuyển khoản (cả chữ hoa , dấu gạch ngang và số). Tài khoản sẽ được active ngay lập tức !</p>
+  <p>Lưu ý: Bạn cần chuyển <b>ĐÚNG SỐ TIỀN</b> (không thừa không thiếu) và ghi <b>CHÍNH XÁC NỘI DUNG</b> chuyển khoản (cả chữ hoa , dấu gạch ngang và số). Tài khoản sẽ được <b>ACTIVE NGAY LẬP TỨC !</b></p>
   
 </table>
 
