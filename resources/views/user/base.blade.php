@@ -379,6 +379,7 @@
                         <!-- End Thu vien -->
 
                         <!-- Bai Cho Dang -->
+						{{--
                         <li class="{{ \Request::route()->getName() == 'post.index' || \Request::route()->getName()  == 'post.add' ? 'active' : '' }}">
                             <a href="{{ route('clone.index') }}">
                                 <i class="fa fa-cloud-upload"></i>
@@ -392,7 +393,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li>--}}
                         <!-- End Bai Cho Dang -->
 
                         <!-- Lich Dang Bai-->
