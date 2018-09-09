@@ -38,6 +38,7 @@ class UserController extends Controller
     public function index(){
         $users = User::orderBy('created_at', 'DESC')
 			->where('is_admin', 0)
+			->where('email', '!=', 'ranchoi@page5s.com')
             ->get();
 
         return view('admin.user.index', [
