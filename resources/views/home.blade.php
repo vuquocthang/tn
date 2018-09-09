@@ -416,6 +416,8 @@
             </div>
 
             <div class="row no-gutters">
+			
+			{{--
                 <!--Gói Trial-->
                 <div class="col-12 col-md-6 col-lg-3 fix-bang-gia" style="max-width: 20%;">
                     <div class="single-price-plan active text-center">
@@ -466,7 +468,7 @@
                             <a href="{{ route('buy.index') }}?type=Trial" class="button button--dark button--oval">CHỌN</a>
                         </div>
                     </div>
-                </div>
+			</div> --}}
 
                 <!--Danh sách gói-->
 
