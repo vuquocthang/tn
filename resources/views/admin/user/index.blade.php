@@ -66,11 +66,11 @@
                                         
 										
                                         <td>
-											<form id="usrActive" action="{{ route('admin.user.active') }}" method="post">
+											<form id="usrActive-{{ $user->id }}" action="{{ route('admin.user.active') }}" method="post">
 											@csrf
 											<input type="hidden" name="user_id" value="{{ $user->id }}" />
 											
-											<select name="service_type" onchange="$('#usrActive').submit()" >
+											<select name="service_type" onchange="$('#usrActive-{{ $user->id }}').submit()" >
 												<option value="" >Chọn Gói</option>
 												<option value="Trial" {{ $user->service_type == 'Trial' ? 'selected' : '' }}>Trial</option>
 												<option value="Beginner" {{ $user->service_type == 'Beginner' ? 'selected' : '' }}>Beginner</option>
