@@ -43,7 +43,7 @@
 <body class="skin-josh">
     <header class="header">
         <a href="{{ url('') }}" class="logo">
-            <img height="60px" src="{{ asset('') }}/Onebitlogo.png" alt="Logo">
+            <img width="200px" src="{{ asset('') }}logo250 x 50.jpg" alt="Logo">
         </a>
         <nav class="navbar navbar-static-top" role="navigation">
             <!-- Sidebar toggle button-->

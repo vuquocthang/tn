@@ -19,7 +19,7 @@
     <link href="{{ asset('') }}/front/inc/themes/default/assets-index/style.css" rel="stylesheet">
     <link href="{{ asset('') }}/front/inc/themes/default/assets-index/css/responsive.css" rel="stylesheet">
     <!--Push noti-->
-
+	<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
                     <div class="menu_area">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <!-- Logo -->
-                            <a class="navbar-brand" href="#"><img style="position: relative;height: 40px;bottom: 5px;" src="{{ asset('') }}/Onebitlogo.png"></a>
+                            <a class="navbar-brand" href="#"><img style="position: relative;height: 40px;bottom: 5px;" src="{{ asset('') }}/logo130 x 40.jpg"></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                             <!-- Menu Area -->
                             <div class="collapse navbar-collapse" id="ca-navbar">
@@ -89,7 +89,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-md">
                     <div class="wellcome-heading">
-                        <h2 style="line-height: 0.5 !important;"><span style="font-family: 'Cookie', cursive;font-weight:  400;font-size: 120px;">ONEBIT </span>Ver 2</h2>
+                        <h2 style="line-height: 0.5 !important;"><span style="font-family:  Monoton, cursive; font-weight:  400;font-size: 120px;">ONEBIT Ver 2</span></h2>
                         <br><br><p>Khám phá phiên bản mới cùng nhiều chức năng mạnh mẽ được tích hợp</p>
                     </div>
                     <div class="get-start-area">
@@ -633,14 +633,18 @@
                                 <span class="color-primary fw-500">10GB</span>
                             </p>
 							 <br>
-							 <span>3 tháng</span>
-							 <br>
-							  <span>VND</span>
-                                <h4>1697K</h4>
-							  </p>
+								<a>
+									<span>3 tháng</span>
+									<br>
+									<span>VND</span>
+									<h4>1697K</h4>
+								</a>
+							 
+							</p>
                         </div>
                         <!-- Plan Button  -->
                         <div class="plan-button">
+							
                             <a href="{{ route('buy.index') }}?type=Business" class="button button--dark button--oval">CHỌN</a>
                         </div>
                     </div>
