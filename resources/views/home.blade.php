@@ -488,8 +488,8 @@
                         <div class="package-plan" style="padding: 10px 0;">
                             <h5>Beginner</h5>
                             <div class="ca-price d-flex justify-content-center">
-                                <span>VND</span>
-                                <h4>199K/th</h4>
+                                
+                                <h4>199.000đ/th</h4>
                             </div>
                         </div>
                         <div class="package-description">
@@ -525,8 +525,7 @@
 							 <br>
 							 <span>3 tháng</span>
 							 <br>
-							  <span>VND</span>
-                                <h4>557K</h4>
+							  <h4>557.000 đ</h4>
 							  </p>
                         </div>
                         <!-- Plan Button  -->
@@ -542,9 +541,8 @@
                         <!-- Package Text  -->
                         <div class="package-plan" style="padding: 10px 0;">
                             <h5>Starter</h5>
-                            <div class="ca-price d-flex justify-content-center">
-                                <span>VND</span>
-                                <h4>537K/th</h4>
+							<div class="ca-price d-flex justify-content-center">
+                                <h4>537.000đ/th</h4>
                             </div>
                         </div>
                         <div class="package-description">
@@ -580,8 +578,7 @@
 							 <br>
 							 <span>3 tháng</span>
 							 <br>
-							  <span>VND</span>
-                                <h4>1197K</h4>
+							 <h4>1.197.000 đ</h4>
 							  </p>
                         </div>
                         <!-- Plan Button  -->
@@ -598,8 +595,7 @@
                         <div class="package-plan" style="padding: 10px 0;">
                             <h5>Business</h5>
                             <div class="ca-price d-flex justify-content-center">
-                                <span>VND</span>
-                                <h4>894K/th</h4>
+                                <h4>894.000đ/th</h4>
                             </div>
                         </div>
                         <div class="package-description">
@@ -636,8 +632,7 @@
 								<a>
 									<span>3 tháng</span>
 									<br>
-									<span>VND</span>
-									<h4>1697K</h4>
+									<h4>1.697.000 đ</h4>
 								</a>
 							 
 							</p>
