@@ -28,7 +28,7 @@
                             @csrf
 
                             <h3 class="black_bg">
-                                <img width="200px" src="{{ asset('') }}/LOGO 214 X 42.jpg" alt="Logo">
+                                <img width="200px" src="{{ asset('') }}214 x 42.png" alt="Logo">
                                 <br>Log In</h3>
                             <div class="form-group ">
                                 <label style="margin-bottom:0;" for="email1" class="uname control-label"> <i class="livicon" data-name="mail" data-size="16" data-loop="true" data-c="#3c8dbc" data-hc="#3c8dbc"></i> E-mail
@@ -75,7 +75,7 @@
                             
 							@csrf
 							<h3 class="black_bg">
-                                <img width="200px" src="{{ asset('') }}/LOGO 214 X 42.jpg" alt="Logo">
+                                <img width="200px" src="{{ asset('') }}214 x 42.png" alt="Logo">
                                 <br>Đăng Ký</h3>
                             <div class="form-group">
                                 <label style="margin-bottom:0;" for="first_name" class="youmail">
