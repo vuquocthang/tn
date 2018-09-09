@@ -18,6 +18,9 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 </style>
+
+<title>Thông Tin Chuyển Khoản</title>
+
 </head>
 <body>
 
