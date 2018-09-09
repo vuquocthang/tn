@@ -52,7 +52,7 @@
                                         <td><b>Tên</b></td>
                                         <td><b>Email</b></td>
                                         
-                                        {{--<td><b>Hành Động</b></td> --}}
+                                        <td><b>Active</b></td>
                                         <td><b>Hành Động</b></td>
                                     </tr>
                                     </thead>
@@ -64,10 +64,23 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         
-										{{--
+										
                                         <td>
-                                            <button class="btn btn-raised btn-warning" onclick="window.location.href='{{ url('admin/user/edit/' . $user->id) }}'">Sửa</button>
-                                        </td>--}}
+											<form id="usrActive" action="{{ route('admin.user.active') }}" method="post">
+											@csrf
+											<input type="hidden" name="user_id" value="{{ $user->id }}" />
+											
+											<select name="service_type" onchange="$('#usrActive').submit()" >
+												<option value="Trial" {{ $user->service_type == 'Trial' ? 'selected' : '' }}>Trial</option>
+												<option value="Beginner" {{ $user->service_type == 'Beginner' ? 'selected' : '' }}>Beginner</option>
+												<option value="Starter" {{ $user->service_type == 'Starter' ? 'selected' : '' }}>Starter</option>
+												<option value="Business" {{ $user->service_type == 'Business' ? 'selected' : '' }}>Business</option>
+												<option value="Beginner3m" {{ $user->service_type == 'Beginner3m' ? 'selected' : '' }}>Beginner 3M</option>
+												<option value="Starter3m" {{ $user->service_type == 'Starter3m' ? 'selected' : '' }}>Starter 3M</option>
+												<option value="Business3m" {{ $user->service_type == 'Business3m' ? 'selected' : '' }}>Business 3M</option>
+											</select>
+											</form>
+										</td>
 
                                         <td>
                                             <button class="btn btn-raised btn-danger md-trigger" data-toggle="modal" data-target="#modal-{{ $user->id }}">Xóa</button>

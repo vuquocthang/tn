@@ -36,6 +36,9 @@ Route::prefix('admin')->namespace('Admin')->middleware('admin')->name('admin.')-
 
         //delete
         Route::get('/delete/{id}', 'UserController@delete')->name('delete');
+		
+		//active
+		Route::post('/active', 'UserController@active')->name('active');
     });
 
     //config

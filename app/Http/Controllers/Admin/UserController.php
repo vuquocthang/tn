@@ -74,4 +74,13 @@ class UserController extends Controller
 
         return redirect()->back()->with('message', 'Xóa user thành công !');
     }
+	
+	public function active(Request $req){
+			
+		$user = User::find($req->user_id);
+		$user->service_type = $req->service_type;
+		$user->save();
+		
+        return redirect()->back()->with('message', 'Active thành công !');
+    }
 }
