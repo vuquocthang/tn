@@ -51,6 +51,7 @@
                                         <td>Uid</td>
 										<td>Ghi Chú</td>
 										<td>Trạng Thái</td>
+										<td>Proxy</td>
                                         <td>Hành Động</td>
                                         <td>Hành Động</td>
                                     </tr>
@@ -67,6 +68,7 @@
 										<td>{{ $clone->note }}</td>
 										
 										<td>{{ $clone->status }}</td>
+										<td>{{ $clone->ip . "|" . $clone->port }}|jaejohdi|YqQhmDd8</td>
 
                                         <td>
                                             <button class="btn btn-raised btn-warning" onclick="window.location.href='{{ route('clone.edit', $clone->id) }}'">Sửa</button>
