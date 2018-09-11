@@ -809,7 +809,7 @@
         </div>
         <!-- Foooter Text-->
         <div class="copyright-text">
-            <p>ONEBIT &copy; Copyright 2018. Powered by <a href="http://autofbmkt.com/" target="_blank">Marketing Facebook Profile</a></p>
+            <p>ONEBIT &copy; Copyright 2018. Powered by <a href="{{ url('') }}" target="_blank">Marketing Facebook Profile</a></p>
             
         </div>
     </footer>
