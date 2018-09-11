@@ -94,7 +94,7 @@
                     </div>
                     <div class="get-start-area">
                         <!-- Form Start -->
-                        <form action="http://autofbmkt.com/login" method="get" class="form-inline">
+                        <form action="{{ url('login') }}" method="get" class="form-inline">
                             <span class="trial">                      </span>
                             <input type="submit" class="submit" value="ĐĂNG KÝ NGAY">
                         </form>
@@ -738,7 +738,7 @@
                         <p><span>Điện thoại: </span><a href='tel:+84978054513'>0978054513</a></p>
                     </div>
                     <div class="email-text">
-                        <p><span>Email: </span><a href='mailto:cskh@autofbmkt.com'>cskh@autofbmkt.com</a></p>
+                        <p><span>Email: </span><a href='mailto:cskh@onebit.click'>cskh@onebit.click</a></p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -787,10 +787,10 @@
         
         <!-- social icon-->
         <div class="footer-social-icon">
-            <a href="https://www.facebook.com/autofbmkt" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/onebit.click" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-            <a href="https://www.instagram.com/autofbmkt" target="_blank"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="https://www.instagram.com/grautofbmkt" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/onebit.click" target="_blank"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/onebit.click" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
         </div>
         <div class="footer-menu">
             <nav>
