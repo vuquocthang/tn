@@ -46,6 +46,8 @@ Route::namespace('Api')->middleware('guard.api')->group(function (){
 	
 	Route::get('clone/{status}', 'CloneController@status');
 	
+	Route::get('clones/{serviceType}/{keywordType}', 'CloneController@serviceType');
+	
 	Route::get('clones', function(){
 		return Clon3::all();
 	});

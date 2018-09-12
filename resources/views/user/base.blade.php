@@ -429,6 +429,31 @@
                         </li>
 						<!-- End Scan UID -->
 						
+						<!-- Vip user keyword -->
+						@if($user->service_type == 'Vip')
+						<li class="{{ \Request::route()->getName() == 'keyword.index' || \Request::route()->getName() == 'keyword.add' ? 'active' : '' }}">
+                            <a href="{{ route('keyword.index') }}">
+                                <i class="fa fa-clock-o" data-name="medal" data-size="18" data-c="#00bc8c" data-hc="#00bc8c" data-loop="true"></i>
+                                <span class="title">Keyword</span>
+                                <span class="fa arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="{{ \Request::route()->getName() == 'keyword.add' ? 'active' : '' }}">
+                                    <a href="{{ route('keyword.add') }}">
+                                        <i class="fa fa-angle-double-right"></i> Add
+                                    </a>
+                                </li>
+                                <li class="{{ \Request::route()->getName() == 'keyword.index' ? 'active' : '' }}">
+                                    <a href="{{ route('keyword.index') }}">
+                                        <i class="fa fa-angle-double-right"></i> Index
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+						@endif
+						<!-- End Vip user keyword -->
+						
 						<!-- Group -->
 						{{--
 						<li class="{{ \Request::route()->getName() == 'group.index' ? 'active' : '' }}">

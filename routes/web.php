@@ -159,7 +159,24 @@ Route::middleware('auth')->namespace('User')->group(function (){
 	Route::prefix('buy')->name('buy.')->group(function(){
 		Route::get('/', 'BuyController@index')->name('index');
 	});
+	
+	//keyword (only vip user)
+	Route::prefix('keyword')->name('keyword.')->group(function (){
+        Route::get('/', 'KeywordController@index')->name('index');
 
+        //add
+        Route::post('/add', 'KeywordController@add')->name('add');
+
+        Route::get('/add', 'KeywordController@addForm')->name('add');
+
+        //edit
+        Route::get('/edit/{id}', 'KeywordController@editForm')->name('edit');
+
+        Route::post('/edit/{id}', 'KeywordController@edit')->name('edit');
+
+        //delete
+        Route::get('/delete/{id}', 'KeywordController@delete')->name('delete');
+    });
 });
 
 require_once "test.php";

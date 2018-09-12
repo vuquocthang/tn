@@ -27,6 +27,10 @@ class Clon3 extends Model
         'port'
     ];
 	
+	public function user(){
+		return $this->belongsTo('App\User');
+	}
+	
 
     /**
      * @return mixed

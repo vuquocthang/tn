@@ -64,4 +64,31 @@ class CloneController extends Controller
         
         return $clones;
     }
+	
+	public function serviceType($serviceType, $keywordType)
+    {
+		$liveClones = Clon3::whereHas('user', function ($query) use ($serviceType) {
+				$query->where('service_type', $serviceType);
+			});
+			
+		if( $keywordType === "all" ){
+			$liveClones->with(['user.vipKeywords']);
+			
+			return $liveClones->get();
+			
+			
+		}else{
+			$liveClones->with([
+				'user' => function ($query) use ($keywordType){
+					$query->with([
+						'vipKeywords' => function($q) use ($keywordType){
+							$q->where('type', $keywordType);
+						}
+					]);
+				}
+			]);
+		}
+		
+        return $liveClones->get();;
+    }
 }

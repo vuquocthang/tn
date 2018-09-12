@@ -34,6 +34,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Clon3');
     }
 	
+	public function vipKeywords(){
+		return $this->hasMany('App\VipKeyword');
+	}
+	
 	public function friendRequests(){
 		return $this->hasManyThrough(
 			'App\FriendRequest', 

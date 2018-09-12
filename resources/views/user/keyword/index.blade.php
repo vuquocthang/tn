@@ -28,6 +28,14 @@
         <section class="content">
             <div class="row">
                 <div class="col-md-12">
+
+                    @if( session('message') )
+                    <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        {{ session('message') }}
+                    </div>
+                    @endif
+
                     <!-- BEGIN SAMPLE TABLE PORTLET-->
                     <div class="portlet box primary">
                         <div class="portlet-title">
@@ -44,6 +52,8 @@
                                         <td><b>Loại</b></td>
                                         <td><b>Keyword</b></td>
                                         <td><b>Nội dung</b></td>
+                                        <td><b>Hành Động</b></td>
+                                        <td><b>Hành Động</b></td>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -51,11 +61,39 @@
                                     @foreach($keywords as $index => $keyword)
                                     <tr>
                                         <td>{{ $index + 1 }}</td>
-                                        <td>{{ $keyword->type }}</td>
+                                        <td>{{ Common::keywordTypeFormat($keyword) }}</td>
                                         <td>{{ $keyword->key }}</td>
                                         <td>{{ $keyword->value }}</td>
+                                        <td>
+                                            <button class="btn btn-raised btn-warning" onclick="window.location.href='{{ url('keyword/edit/' . $keyword->id) }}'">Sửa</button>
+                                        </td>
 
+                                        <td>
+                                            <button class="btn btn-raised btn-danger md-trigger" data-toggle="modal" data-target="#modal-{{ $keyword->id }}">Xóa</button>
+                                        </td>
                                     </tr>
+
+                                    <div class="modal fade" id="modal-{{ $keyword->id }}" role="dialog" aria-labelledby="modalLabeldanger">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-danger">
+                                                    <h4 class="modal-title" id="modalLabeldanger">Bạn chắc chắn muốn xóa ?</h4>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <button class="btn btn-raised btn-danger" onclick="window.location.href='{{ route('keyword.delete', $keyword->id) }}'" >Xóa</button>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <button class="btn btn-raised btn-success" data-dismiss="modal">Hủy</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                     @endforeach
 
                                     </tbody>
@@ -70,5 +108,5 @@
         </section>
         <!-- content -->
     </aside>
-
 @endsection
+
