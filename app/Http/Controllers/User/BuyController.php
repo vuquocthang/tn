@@ -71,18 +71,23 @@ class BuyController extends Controller
     }
 	
 	public function coupon(Request $req){
-		$check = Coupon::where('code', $req->code)->first();
+		$type = $request->input('type');
 		
-		if($check){
-			$tran = Transaction::where('txn_id', $req->txn_id)->first();
-			
-			if($tran){
-				$tran->update([
-					'price' => $check->price_1m,
-					'price3m' => $check->price_3m
-				]);
+		if($type === "Beginner"){
+			$check = Coupon::where('code', $req->code)->first();
+		
+			if($check){
+				$tran = Transaction::where('txn_id', $req->txn_id)->first();
+				
+				if($tran){
+					$tran->update([
+						'price' => $check->price_1m,
+						'price3m' => $check->price_3m
+					]);
+				}
 			}
 		}
+		
 		
 		return redirect()->back();
 	} 
