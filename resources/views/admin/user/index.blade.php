@@ -80,6 +80,7 @@
 												<option value="Starter3m" {{ $user->service_type == 'Starter3m' ? 'selected' : '' }}>Starter 3M</option>
 												<option value="Business3m" {{ $user->service_type == 'Business3m' ? 'selected' : '' }}>Business 3M</option>
 												<option value="Vip" {{ $user->service_type == 'Vip' ? 'selected' : '' }}>Vip</option>
+												<option value="Vip" {{ $user->service_type == 'Vip' ? 'selected' : '' }}>Vip 1M</option>
 											</select>
 											</form>
 										</td>
