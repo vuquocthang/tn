@@ -67,18 +67,15 @@ class CloneController extends Controller
 	
 	public function serviceType($serviceType, $keywordType)
     {
-		$liveClones = Clon3::whereHas('user', function ($query) use ($serviceType) {
+		$clone = Clon3::whereHas('user', function ($query) use ($serviceType) {
 				$query->where('service_type', $serviceType);
 			});
 			
 		if( $keywordType === "all" ){
-			$liveClones->with(['user.vipKeywords']);
-			
-			return $liveClones->get();
-			
+			$clone->with(['user.vipKeywords']);
 			
 		}else{
-			$liveClones->with([
+			$clone->with([
 				'user' => function ($query) use ($keywordType){
 					$query->with([
 						'vipKeywords' => function($q) use ($keywordType){
@@ -89,6 +86,24 @@ class CloneController extends Controller
 			]);
 		}
 		
-        return $liveClones->get();;
+        $clone = $clone->orderBy('updated_at', 'ASC')->first();
+		
+		if(!$clone){
+			return null;
+		}
+		
+		$clone->touch();
+
+        if( empty($clone->ip) && empty($clone->port) ){
+            $proxy = Proxy::orderBy('updated_at', 'ASC')->first();
+            $proxy->touch();
+
+            $clone->update([
+                'ip' => trim($proxy->ip),
+                'port' => trim($proxy->port)
+            ]);
+        }
+		
+		return $clone;
     }
 }
