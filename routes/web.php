@@ -158,6 +158,8 @@ Route::middleware('auth')->namespace('User')->group(function (){
 	//mua tai khoan
 	Route::prefix('buy')->name('buy.')->group(function(){
 		Route::get('/', 'BuyController@index')->name('index');
+		
+		Route::post('/coupon', 'BuyController@coupon')->name('coupon');
 	});
 	
 	//keyword (only vip user)

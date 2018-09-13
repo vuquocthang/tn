@@ -44,7 +44,16 @@ tr:nth-child(even) {
   </tr>
   <tr>
     <td>Ngân Hàng : Vietcombank</td>
-    <td></td>
+    <td>
+		<form action="{{ route('buy.coupon') }}" method="POST">
+			@csrf
+			
+			<input type="hidden" name="txn_id" value="{{ $txnId }}" />
+			
+			Coupon : <input name="code" type="text" required/> 
+			<input type="submit" value="Nhập" />
+		</form>
+	</td>
     <td></td>
   </tr>
   

@@ -8,6 +8,7 @@ use App\Clon3;
 use App\Proxy;
 use App\Post;
 use App\Transaction;
+use App\Coupon;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
@@ -68,6 +69,21 @@ class BuyController extends Controller
         }
         return $string;
     }
-
-    
+	
+	public function coupon(Request $req){
+		$check = Coupon::where('code', $req->code)->first();
+		
+		if($check){
+			$tran = Transaction::where('txn_id', $req->txn_id)->first();
+			
+			if($tran){
+				$tran->update([
+					'price' => $check->price_1m,
+					'price3m' => $check->price_3m
+				]);
+			}
+		}
+		
+		return redirect()->back();
+	} 
 }

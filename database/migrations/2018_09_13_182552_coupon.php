@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class VipKeyword extends Migration
+class Coupon extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,11 @@ class VipKeyword extends Migration
      */
     public function up()
     {
-        Schema::create('vip_keyword', function (Blueprint $table) {
+        Schema::create('coupon', function (Blueprint $table) {
             $table->increments('id');
-			
-			$table->integer('user_id')->unsigned()->nullable();
-			$table->foreign('user_id')->references('users')->on('id');
-			
-			$table->integer('status')->default(0);
-			$table->string('type');
-			$table->string('key')->nullable();
-			$table->string('value');
-			
+			$table->string('code');
+			$table->integer('price_1m');
+			$table->integer('price_3m');
             $table->timestamps();
         });
     }
@@ -35,6 +29,6 @@ class VipKeyword extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vip_keyword');
+        Schema::dropIfExists('coupon');
     }
 }
