@@ -43,7 +43,7 @@ tr:nth-child(even) {
     <td></td>
   </tr>
   <tr>
-    <td>Ngân Hàng : Vietcombank</td>
+    <td>Ngân Hàng : Vietcombank, Chi Nhánh Thành Công</td>
     <td>
 		<form action="{{ route('buy.coupon') }}" method="POST">
 			@csrf
