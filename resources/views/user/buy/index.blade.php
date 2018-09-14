@@ -47,7 +47,7 @@ tr:nth-child(even) {
     <td>
 		<form action="{{ route('buy.coupon') }}" method="POST">
 			@csrf
-			
+			<input type="hidden" name="type" value="{{ \Illuminate\Support\Facades\Input::get('type') }}" />
 			<input type="hidden" name="txn_id" value="{{ $txnId }}" />
 			
 			Coupon : <input name="code" type="text" required/> 
