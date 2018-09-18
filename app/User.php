@@ -29,6 +29,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+	
+	public function tokens(){
+		return $this->hasMany('App\Token');
+	}
 
     public function clones(){
         return $this->hasMany('App\Clon3');

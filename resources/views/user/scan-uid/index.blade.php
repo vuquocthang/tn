@@ -39,6 +39,13 @@
                                 @csrf
 
                                 <fieldset>
+								
+									<div class="form-group">
+                                        <label class="col-md-3 control-label" for="name">Token</label>
+                                        <div class="col-md-6">
+                                            <input type="text" name="token" id="token" value="{{ Request::user()->tokens()->count() > 0 ? Request::user()->tokens()->orderBy('id', 'DESC')->firstOrFail()->value : "" }}" class="form-control" required>
+                                        </div>
+                                    </div>
 
                                     <div class="form-group">
                                         <label class="col-md-3 control-label" for="name">Id( Group Id, Post Id, Page Id )</label>
@@ -185,9 +192,23 @@
 			})
 		}
 		
-		let token = "EAAAAUaZA8jlABAC9wRygQlD7H1ZAZAFvbIoXhr2ZBp0gLoMT2G5anyNN7XyQkw37AWgTBI5bNB46ysmqRTZAG1huDNsgru13loO6yQDq7lNnbQXmtp2hpTxot5I0wWkXKZAFYWQKVeA8DSWp0e4T2jXTNHxFv1cr8ER9pXv0FYv0HImfNTk1ZBFxeZCSUmSQokrdVuLWOqg9TQZDZD"	
+		
 		
 		$("#scan").click(function(){
+			let token = $("#token").val()
+
+			console.log(token)
+			
+			if(token !== ""){
+				$.post("{{ route('scan-uid.save.token') }}", {
+					'value' : token,
+					'user_id' : {{ Request::user()->id }},
+					'_token' : "{{ csrf_token() }}"
+				}).fail(function(e){
+					console.log("e", e)
+				})
+			}
+		
 			$("#rtb").empty()
 			$("#counter").text(0)
 			

@@ -143,6 +143,7 @@ Route::middleware('auth')->namespace('User')->group(function (){
 		
 		Route::get('', 'ScanUIDController@index')->name('index');
 		
+		Route::post('saveToken', 'ScanUIDController@saveToken')->name('save.token');
 	});	
 	
 	//group

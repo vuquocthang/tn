@@ -73,7 +73,7 @@ class BuyController extends Controller
 	public function coupon(Request $req){
 		$type = trim($req->type);
 		
-		if($type === "Beginner"){
+		if($type === "Starter"){
 			$check = Coupon::where('code', trim($req->code))->first();
 		
 			if($check){
